@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poshu Shop</title>
+    <title>PoshuPakhi</title>
 <!-- Bootstrap CSS Link Start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <!-- Bootstrap CSS Link End -->
@@ -13,16 +13,33 @@
 <!-- Font Awesome Link End -->
 
 <!-- Style.css Link Start -->
- <link rel="stylesheet" href=".assets/css/style.css">
+ <link rel="stylesheet" href="./assets/css/style.css">
 <!-- Style.css Link End -->
 </head>
 <body>
 <!-- Navbar Start -->
+<!-- First Part Start -->
+    <div class="navbar navbar-expand-lg bg-light">
+      <ul class="navbar-nav me-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="">Welcome Guest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Login</a>
+      </li>
+
+      </ul>
+
+    </div>
+<!-- First Part End -->
+
+<!-- Second Part Start -->
     <div class="container-fluid p-0">
-        <!-- First Part Start -->
+        
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <img src="./assets/images/logo.jpg" alt="logo" class="petghorlogo">
+    <img src="./assets/images/logo.jpg" alt="logo" class="logo">
     <a class="navbar-brand" href="#">PoshuPakhi Logo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -56,12 +73,114 @@
     </div>
   </div>
 </nav>
-        <!-- First Part End -->
     </div>
-
-
-
+<!-- Second Part End -->
 <!-- Navbar End -->
+
+<!-- Center Part Start -->
+<!-- Title Part Start -->
+
+<div class="bg-light">
+  <h3 class="text-center">PoshuPakhi</h3>
+  <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
+</div>
+
+<!-- Title Part End -->
+
+<!-- Sidebar Start -->
+
+<div class="row">
+  <div class="col-md-2 bg-secondary p-0 text-center">
+  <!-- SideBar Start-->
+  <ul class="navbar-nav me-auto">
+    <li class="nav-item bg-info">
+      <h3>Category</h3>
+    </li>
+    <li class="nav-item bg-info">
+      <a href="#" class="nav-link side-category">Cat Food</a>
+    </li>
+    <li class="nav-item bg-info">
+      <a href="#" class="nav-link">Dog Food</a>
+    </li>
+  </ul>
+  <!-- SideBar End -->
+  </div>
+  <div class="col-md-10">
+    <!-- Product Start -->
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="#" class="btn btn-secondary">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="#" class="btn btn-secondary">View More</a>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card" >
+          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="#" class="btn btn-secondary">View More</a>
+          </div>
+        </div>
+      </div>
+      <!-- first 3 row end -->
+      <div class="col-md-4 mt-2">
+        <div class="card" >
+          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="#" class="btn btn-secondary">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-2">
+        <div class="card" >
+          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="#" class="btn btn-secondary">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-2">
+        <div class="card" >
+          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+            <a href="#" class="btn btn-secondary">View More</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Product End -->
+  </div>
+</div>
+<!-- Center Part End -->
 
 
 <!-- Footer Start -->
