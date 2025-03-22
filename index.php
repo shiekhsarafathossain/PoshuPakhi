@@ -39,7 +39,7 @@
         
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <img src="./assets/images/logo.jpg" alt="logo" class="logo">
+    <img src="./assets/images/logo.png" alt="logo" class="logo">
     <a class="navbar-brand" href="#">PoshuPakhi Logo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
