@@ -1,16 +1,91 @@
-<form action="" method="post" class="mb-2">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Category</title>
+    <!-- Bootstrap CSS Link Start -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap CSS Link End -->
+    <!-- Font Awesome Link Start -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome Link End -->
+    <!-- Style.css Link Start -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Style.css Link End -->
+     
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- First Part Start -->
+    <div class="navbar navbar-expand-lg bg-light">
+      <ul class="navbar-nav me-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" href="">Welcome Guest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Login</a>
+      </li>
+
+      </ul>
+
+    </div>
+<!-- First Part End -->
+    <div class="container-fluid p-0">
+        <div class="navbar navbar-expand-lg navbar-light bg-info">
+            <div class="container-fluid">
+            <img src="../assets/images/logo.png" alt="logo" class="logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- Button Part -->
+     
+    <div class="container-fluid p-0">
+        <div class="navbar navbar-expand-lg navbar-light bg-info">
+            <div class="container-fluid">
+                <div class="btn-group container" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Product</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Products</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="insert_categories.php" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Categories</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Categories</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">All Orders</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">All Payments</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">List Users</a></button>
+                </div>
+            </div>
+        </div>  
+    </div>
 
 
-<div class="input-group w-90 mb-2">
-  <span class="input-group-text bg-info" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
-  <input type="text" class="form-control" name="cat_title" placeholder="Insert Categories" aria-label="Username" aria-describedby="basic-addon1">
-</div>
+    <div class="container my-5">  
+    <form action="" method="post" class="mb-2">
 
-<div class="input-group w-10 mb-2 bg-info">
-    <input type="submit" class="form-control" name="insert_cat" value="Insert Categories" aria-label="Username" aria-describedby="basic-addon1">
-</div>
+      <div class="input-group w-90 mb-2">
+        <span class="input-group-text bg-info" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
+        <input type="text" class="form-control" name="cat_title" placeholder="Insert Categories" aria-label="Categories" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group w-10 mb-2 m-auto bg-primary">
+        <input type="submit" class="form-control bg-primary text-light" name="insert_cat" value="Insert Categories">
+      </div>
+
+    </form>
+    </div>
+
+    <!-- Footer Start -->
+    <footer class="py-3 my-4 bg-info footer">
+        <p class="text-center text-body-secondary">All rights reserved © 2025 by Sheikh Sarafat Hossain</p>
+    </footer>
+    <!-- Footer End -->
 
 
 
+<!-- Bootstrap JS Link Start -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Bootstrap JS Link End -->
+</body>
+</html>
 
-</form>
+

@@ -40,30 +40,22 @@
         </div>
     </div>
 
-    <!-- Button Part -->
-     <div class="button text-center">
-        <button><a href="" class="nav-link text-light bg-info my-1">Insert Product</a></button>
-        <button><a href="" class="nav-link text-light bg-info my-1">View Product</a></button>
-        <button><a href="index.php?insert_category" class="nav-link text-light bg-info my-1">Insert Categories</a></button>
-        <button><a href="" class="nav-link text-light bg-info my-1">View Categories</a></button>
-        <button><a href="" class="nav-link text-light bg-info my-1"></a></button>
-        <button><a href="" class="nav-link text-light bg-info my-1"></a></button>
-        <button><a href="" class="nav-link text-light bg-info my-1"></a></button>
-        <button><a href="" class="nav-link text-light bg-info my-1"></a></button>
-        <button><a href="" class="nav-link text-light bg-info my-1"></a></button>
-     </div>
-
-
-
-
-
-    <div class="container my-5 ">
-        <?php 
-        if(isset($GET["insert_category"])){
-            include("insert_categories.php");
-        }
-        ?>
+    <div class="container-fluid p-0">
+        <div class="navbar navbar-expand-lg navbar-light bg-info">
+            <div class="container-fluid">
+                <div class="btn-group container" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Product</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Products</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="insert_categories.php" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Categories</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Categories</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">All Orders</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">All Payments</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">List Users</a></button>
+                </div>
+            </div>
+        </div>  
     </div>
+
 
     <!-- Footer Start -->
     <footer class="py-3 my-4 bg-info footer">
