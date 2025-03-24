@@ -46,7 +46,7 @@
                 <div class="btn-group container" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Product</a></button>
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Products</a></button>
-                    <button type="button" class="btn btn-primary m-0 p-0"><a href="insert_categories.php" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Categories</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="index.php?insert_category" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Categories</a></button>
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Categories</a></button>
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">All Orders</a></button>
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">All Payments</a></button>
@@ -54,6 +54,15 @@
                 </div>
             </div>
         </div>  
+    </div>
+
+
+    <div class="container my-5 ">
+        <?php 
+        if(isset($_GET["insert_category"])){
+            include("insert_categories.php");
+        }
+        ?>
     </div>
 
 

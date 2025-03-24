@@ -1,3 +1,7 @@
+<!-- Connect File -->
+<?php
+  include("Includes/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,13 +100,20 @@
     <li class="nav-item bg-info">
       <h3>Category</h3>
     </li>
-    <li class="nav-item bg-info">
-      <a href="#" class="nav-link side-category">Cat Food</a>
-    </li>
-    <li class="nav-item bg-info">
-      <a href="#" class="nav-link">Dog Food</a>
-    </li>
-  </ul>
+    
+    <?php
+      $select_category = "SELECT * FROM categories";
+      $result_category = mysqli_query($con,$select_category);
+    
+      while($row_data = mysqli_fetch_assoc($result_category)){
+        $category_title = $row_data['category_title'];
+        $category_id = $row_data['category_id'];
+        echo "<li class='nav-item bg-info'>
+        <a href='index.php?categories=$category_id' class='nav-link bg-primary'>$category_title</a>
+      </li>";
+    }
+  ?>
+
   <!-- SideBar End -->
   </div>
   <div class="col-md-10">
