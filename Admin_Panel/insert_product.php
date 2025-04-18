@@ -1,3 +1,6 @@
+<?php
+include("../includes/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,12 +48,24 @@
 
             <!-- Category Start -->
             <div class="form-outline mb-4 w-50 m-auto">
-            <select name="product_categories" id="" class="form-select">
+                <select name="product_category" id="" class="form-select">
                 <option value="">Select a Category</option>
-                <option value="">1</option>
-                <option value="">Select a Catego1r</option>
-                <option value="">Select a Catego2r</option>
-            </select>
+
+                <?php
+                // Query to get all categories from the database
+                $select_query = "SELECT * FROM categories";
+                
+                $result_query = mysqli_query($con, $select_query);
+                while($row = mysqli_fetch_assoc($result_query)) {
+                    $category_title = $row['category_title'];
+                    // Loop through each category
+                    
+                    $category_id = $row['category_id'];
+                    echo "<option value='$category_id'>$category_title</option>";
+                    // Print each option tag
+                }
+                ?>
+                </select>
             </div>
             <!-- Category End -->
 
