@@ -44,7 +44,7 @@
         <div class="navbar navbar-expand-lg navbar-light bg-info">
             <div class="container-fluid">
                 <div class="btn-group container" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Product</a></button>
+                    <button type="button" class="btn btn-primary m-0 p-0"><a href="insert_product.php" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Product</a></button>
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Products</a></button>
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="index.php?insert_category" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">Insert Categories</a></button>
                     <button type="button" class="btn btn-primary m-0 p-0"><a href="#" class="nav-link text-light bg-primary px-3 py-3 mx-0 my-0">View Categories</a></button>

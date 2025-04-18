@@ -1,5 +1,47 @@
 <?php
 include("../includes/connect.php");
+if(isset($_POST['insert_products'])){
+    $product_title = $_POST['product_title'];
+    $product_description = $_POST['description'];
+    $product_keywords = $_POST['product_keywords'];
+    $product_category = $_POST['product_category'];
+    $product_price = $_POST['product_price'];
+    $product_status = 'true';
+
+    //Accessing images
+    $product_image1 = $_FILES['product_image1']['name'];
+    $product_image2 = $_FILES['product_image2']['name'];
+    $product_image3 = $_FILES['product_image3']['name'];
+    
+    //Accessing image temp name
+
+    $temp_image1 = $_FILES['product_image1']['tmp_name'];
+    $temp_image2 = $_FILES['product_image2']['tmp_name'];
+    $temp_image3 = $_FILES['product_image3']['tmp_name'];
+
+    //Checking empty Condition
+
+    if($product_title=='' or $product_description=='' or $product_keywords=='' or $product_category=='' or $product_price=='' or $temp_image1=='' or $temp_image2=='' or $temp_image3==''){
+        echo "<script>alert('Please fill all the fields')</script>";
+        exit();
+    }
+    else{
+
+        //images
+        move_uploaded_file($temp_image1,"../assets/images/product_images/$product_image1");
+        move_uploaded_file($temp_image2,"../assets/images/product_images/$product_image2");
+        move_uploaded_file($temp_image3,"../assets/images/product_images/$product_image3");
+
+        //insert query
+        $insert_products = "INSERT INTO `products` (product_title, product_description, product_keywords, category_id, product_image1, product_image2, product_image3, product_price, date, status) VALUES 
+        ('$product_title', '$product_description', '$product_keywords', '$product_category', '$product_image1', '$product_image2', '$product_image3', '$product_price', NOW(), '$product_status')";
+        
+        $result_query = mysqli_query($con,$insert_products);
+        if($result_query){
+            echo "<script>alert('Products inserted successfully')</script>";
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +65,7 @@ include("../includes/connect.php");
 
     <div class="container mt-5">
         <h1 class="text-center">Insert Products</h1>
-        <form action="" method="post" enctype="multipart/form-data"></form>
+        <form action="" method="post" enctype="multipart/form-data">
 
             <!-- Title Start -->
             <div class="form-outline mb-4 w-50 m-auto">
@@ -48,24 +90,19 @@ include("../includes/connect.php");
 
             <!-- Category Start -->
             <div class="form-outline mb-4 w-50 m-auto">
-                <select name="product_category" id="" class="form-select">
+            <select name="product_category" id="" class="form-select">
                 <option value="">Select a Category</option>
-
-                <?php
-                // Query to get all categories from the database
-                $select_query = "SELECT * FROM categories";
                 
-                $result_query = mysqli_query($con, $select_query);
-                while($row = mysqli_fetch_assoc($result_query)) {
-                    $category_title = $row['category_title'];
-                    // Loop through each category
-                    
-                    $category_id = $row['category_id'];
-                    echo "<option value='$category_id'>$category_title</option>";
-                    // Print each option tag
-                }
+                <?php
+                    $select_query="Select * from categories";
+                    $result_query=mysqli_query($con,$select_query);
+                    while($row=mysqli_fetch_assoc($result_query)){
+                            $category_title=$row['category_title'];
+                            $category_id=$row['category_id'];
+                            echo "<option value='$category_id'>$category_title</option>";
+                    }
                 ?>
-                </select>
+            </select>
             </div>
             <!-- Category End -->
 
@@ -95,13 +132,13 @@ include("../includes/connect.php");
             </div>
             <!-- Product Price End -->
 
-            <!-- Product Price Start -->
+            <!-- Product Button Start -->
             <div class="form-outline mb-4 w-50 m-auto">
-            <input type="submit" name="insert_products" class="btn btn-info" value="Insert Products">
+                <input type="submit" name="insert_products" class="btn btn-info mb-3 px-3" value="Insert Products">
             </div>
-            <!-- Product Price End -->
+            <!-- Product Button End -->
             
-        
+        </form>
     </div>
 
 
