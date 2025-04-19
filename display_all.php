@@ -52,7 +52,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="display_all.php">Products</a>
@@ -119,8 +119,8 @@
 
     <?php
     
-    //calling function getProducts()
-    getProducts();
+    //calling function getAllProducts()
+    getAllProducts();
 
     //calling function getProducts()
     getProductsbByCategories();
@@ -136,9 +136,16 @@
 
 
 <!-- Footer Start -->
-<?php
-  include("includes/footer.php");
-?>
+<footer class="py-3 my-4 bg-info">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+    </ul>
+    <p class="text-center text-body-secondary">All rights reserved © 2025 by Sheikh Sarafat Hossain</p>
+  </footer>
 <!-- Footer End -->
     
 <!-- Bootstrap JS Link Start -->
