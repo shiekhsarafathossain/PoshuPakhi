@@ -93,7 +93,7 @@
 
 <!-- Sidebar Start -->
 
-<div class="row">
+<div class="row m-auto"> <!-- row m-auto for fixing bug side width-->
   <div class="col-md-2 bg-secondary p-0 text-center">
   <!-- SideBar Start-->
   <ul class="navbar-nav me-auto">
