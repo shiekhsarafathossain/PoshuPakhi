@@ -119,8 +119,8 @@
 
     <?php
     
-    //calling function getProducts()
-    getProducts();
+    //calling function searchProducts()
+    searchProducts();
 
     //calling function getProducts()
     getProductsbByCategories();

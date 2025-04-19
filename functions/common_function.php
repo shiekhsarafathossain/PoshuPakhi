@@ -111,4 +111,48 @@ function getCategory(){
 
 // getting category function end
 
+// searching products function start
+
+function searchProducts(){
+  global $con;
+    //if no categories selected ##for home page
+    if(isset($_GET['search_data_product'])){
+      $searchValue = $_GET['search_data'];
+    // Fetching the products
+    $search_query = "SELECT * FROM products WHERE product_keywords LIKE '%$searchValue%'";
+    $result_query = mysqli_query($con,$search_query);
+    // $row = mysqli_fetch_assoc($result_query);
+    // echo $row['product_title'];
+    $numOfRows = mysqli_num_rows($result_query); // counting rows
+    if($numOfRows==0){
+        echo "<h2 class='text-center'>No Result Matched :(</h2>";
+    }
+    while($row = mysqli_fetch_assoc($result_query)){
+      $product_id = $row['product_id'];
+      $product_title = $row['product_title'];
+      $product_description = $row['product_description'];
+    //  $product_keywords = $row['product_keywords'];
+      $category_id = $row['category_id'];
+       $product_image1 = $row['product_image1'];
+      $product_image2 = $row['product_image2'];
+      $product_image3 = $row['product_image3'];
+      $product_price = $row['product_price'];
+      echo "<div class='col-md-4 mb-3'>
+      <div class='card'>
+        <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+        <div class='card-body'>
+          <h5 class='card-title'>$product_title</h5>
+          <p class='card-text'>$product_description</p>
+          <a href='#' class='btn btn-primary'>Add to cart</a>
+          <a href='#' class='btn btn-secondary'>View More</a>
+        </div>
+      </div>
+    </div>";
+    }
+
+    }
+}
+
+// searching products function end
+
 ?>
