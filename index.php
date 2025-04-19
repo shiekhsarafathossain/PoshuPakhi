@@ -1,6 +1,7 @@
 <!-- Connect File -->
 <?php
   include("Includes/connect.php");
+  include("functions/common_function.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +94,7 @@
 
 <!-- Sidebar Start -->
 
-<div class="row m-auto"> <!-- row m-auto for fixing bug side width-->
+<div class="row m-auto"> <!-- row m-auto for fixing bug side width -->
   <div class="col-md-2 bg-secondary p-0 text-center">
   <!-- SideBar Start-->
   <ul class="navbar-nav me-auto">
@@ -101,17 +102,10 @@
       <h3>Category</h3>
     </li>
     
-    <?php
-      $select_category = "SELECT * FROM categories";
-      $result_category = mysqli_query($con,$select_category);
+  <?php
+    //calling function getCategory()
+    getCategory();
     
-      while($row_data = mysqli_fetch_assoc($result_category)){
-        $category_title = $row_data['category_title'];
-        $category_id = $row_data['category_id'];
-        echo "<li class='nav-item bg-info'>
-        <a href='index.php?categories=$category_id' class='nav-link bg-primary'>$category_title</a>
-      </li>";
-    }
   ?>
 
   <!-- SideBar End -->
@@ -119,79 +113,20 @@
   <div class="col-md-9 m-auto">
     <!-- Product Start -->
     <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-            <a href="#" class="btn btn-secondary">View More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Add to cart</a>
-            <a href="#" class="btn btn-secondary">View More</a>
-            </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card" >
-          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-            <a href="#" class="btn btn-secondary">View More</a>
-          </div>
-        </div>
-      </div>
-      <!-- first 3 row end -->
-      <div class="col-md-4 mt-2">
-        <div class="card" >
-          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-            <a href="#" class="btn btn-secondary">View More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mt-2">
-        <div class="card" >
-          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-            <a href="#" class="btn btn-secondary">View More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mt-2">
-        <div class="card" >
-          <img src="./assets/images/logo.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Add to cart</a>
-            <a href="#" class="btn btn-secondary">View More</a>
-          </div>
-        </div>
-      </div>
+    
+    <!-- Php Code -->
+
+    <?php
+    //calling function getProducts()
+      getProducts();
+    ?>
 
     </div>
     <!-- Product End -->
   </div>
-</div>
 <!-- Center Part End -->
+</div>
+
 
 
 <!-- Footer Start -->
