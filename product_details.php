@@ -114,13 +114,40 @@
   <div class="col-md-9 m-auto">
     <!-- Product Start -->
     <div class="row">
+
+    <div class="col-md-4">
+        <!-- card -->
+        <div class='card'>
+            <img src='./assets/images/logo.png' class='card-img-top' alt='$product_title'>
+            <div class='card-body'>
+                <h5 class='card-title'>$product_title</h5>
+                <p class='card-text'>$product_description</p>
+                <a href='#' class='btn btn-primary'>Add to cart</a>
+                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <!-- related cards -->
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center text-info mb-5">Related Products</h4>
+            </div>
+            <div class="col-md-6">
+                <img src='./assets/images/logo.png' class='card-img-top' alt='$product_title'>
+            </div>
+            <div class="col-md-6">
+                <img src='./assets/images/logo.png' class='card-img-top' alt='$product_title'>
+            </div>
+        </div>
+    </div>
     
     <!-- Php Code -->
 
     <?php
     
-    //calling function searchProducts()
-    searchProducts();
+    //calling function getProducts()
+   // getProducts();
 
     //calling function getProducts()
     getProductsbByCategories();
@@ -136,16 +163,9 @@
 
 
 <!-- Footer Start -->
-<footer class="py-3 my-4 bg-info">
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-    </ul>
-    <p class="text-center text-body-secondary">All rights reserved © 2025 by Sheikh Sarafat Hossain</p>
-  </footer>
+<?php
+  include("includes/footer.php");
+?>
 <!-- Footer End -->
     
 <!-- Bootstrap JS Link Start -->

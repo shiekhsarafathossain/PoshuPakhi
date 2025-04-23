@@ -32,7 +32,7 @@ function getProducts(){
           <h5 class='card-title'>$product_title</h5>
           <p class='card-text'>$product_description</p>
           <a href='#' class='btn btn-primary'>Add to cart</a>
-          <a href='#' class='btn btn-secondary'>View More</a>
+          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
         </div>
       </div>
     </div>";
@@ -73,7 +73,7 @@ function getAllProducts(){
           <h5 class='card-title'>$product_title</h5>
           <p class='card-text'>$product_description</p>
           <a href='#' class='btn btn-primary'>Add to cart</a>
-          <a href='#' class='btn btn-secondary'>View More</a>
+          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
         </div>
       </div>
     </div>";
@@ -120,7 +120,7 @@ function getProductsbByCategories(){
           <h5 class='card-title'>$product_title</h5>
           <p class='card-text'>$product_description</p>
           <a href='#' class='btn btn-primary'>Add to cart</a>
-          <a href='#' class='btn btn-secondary'>View More</a>
+          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
         </div>
       </div>
     </div>";
@@ -185,7 +185,7 @@ function searchProducts(){
           <h5 class='card-title'>$product_title</h5>
           <p class='card-text'>$product_description</p>
           <a href='#' class='btn btn-primary'>Add to cart</a>
-          <a href='#' class='btn btn-secondary'>View More</a>
+          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
         </div>
       </div>
     </div>";
