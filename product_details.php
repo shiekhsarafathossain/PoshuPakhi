@@ -114,41 +114,14 @@
   <div class="col-md-9 m-auto">
     <!-- Product Start -->
     <div class="row">
-
-    <div class="col-md-4">
-        <!-- card -->
-        <div class='card'>
-            <img src='./assets/images/logo.png' class='card-img-top' alt='$product_title'>
-            <div class='card-body'>
-                <h5 class='card-title'>$product_title</h5>
-                <p class='card-text'>$product_description</p>
-                <a href='#' class='btn btn-primary'>Add to cart</a>
-                <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-8">
-        <!-- related cards -->
-        <div class="row">
-            <div class="col-md-12">
-                <h4 class="text-center text-info mb-5">Related Products</h4>
-            </div>
-            <div class="col-md-6">
-                <img src='./assets/images/logo.png' class='card-img-top' alt='$product_title'>
-            </div>
-            <div class="col-md-6">
-                <img src='./assets/images/logo.png' class='card-img-top' alt='$product_title'>
-            </div>
-        </div>
-    </div>
-    
     <!-- Php Code -->
 
     <?php
     
     //calling function getProducts()
    // getProducts();
-
+   //calling product details
+   view_details();
     //calling function getProducts()
     getProductsbByCategories();
 
