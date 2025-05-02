@@ -64,10 +64,10 @@
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup>1</sup>Cart</a>
+          <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup>Cart</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Total Price:100/-</a>
+          <a class="nav-link" href="#">Total Price:<?php total_cart_price(); ?>/-</a>
         </li>
     
       </ul>
@@ -81,6 +81,14 @@
 </nav>
     </div>
 <!-- Second Part End -->
+  <?php
+    cart();
+  ?>
+<!-- calling cart function start -->
+
+
+<!-- calling cart function end -->
+
 <!-- Navbar End -->
 
 <!-- Center Part Start -->
@@ -124,6 +132,9 @@
 
     //calling function getProducts()
     getProductsbByCategories();
+
+    // $ip = getIPAddress();  
+    // echo 'User Real IP Address - '.$ip;  
 
     ?>
 
