@@ -24,3 +24,10 @@
 .side-category{
     background-color: burlywood !important;
 }
+
+
+.cart_img{
+    width : 100px;
+    height:100px;
+    object-fit: contain;
+}

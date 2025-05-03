@@ -360,10 +360,7 @@ function total_cart_price(){
 
 }
 
-
-
 // total cart price end
-
 
 
 
