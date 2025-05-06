@@ -98,25 +98,40 @@ if (isset($_POST['user_register'])) {
     $user_contact = $_POST['user_contact'];
     $user_ip = getIPAddress();
 
-    // Check if passwords match
+    // Check if passwords not match
     if ($user_password !== $confirm_user_password) {
         echo "<script>alert('Passwords do not match. Please try again.');</script>";
         exit();
     }
 
+    // password hashing
+
+    $hash_password = password_hash($user_password,PASSWORD_DEFAULT); 
+
     // Move uploaded image
     move_uploaded_file($user_image_tmp, "../assets/images/user_images/$user_image");
 
+    //select query
+
+    $select_query = "SELECT * FROM user_table WHERE username='$user_username' OR user_email='$user_email'";
+    $result=mysqli_query($con,$select_query);
+    $rows_count=mysqli_num_rows($result);
+
+    if($rows_count>0){
+        echo "<script>alert('User already exist');</script>";
+    }
+    else{
     // Insert query
-    $insert_query = "INSERT INTO user_table (user_name, user_email, user_password, user_image, user_ip, user_address, user_mobile) 
-                     VALUES ('$user_username', '$user_email', '$user_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
+    $insert_query = "INSERT INTO user_table (username, user_email, user_password, user_image, user_ip, user_address, user_mobile) 
+    VALUES ('$user_username', '$user_email', '$hash_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
 
     $sql_execute = mysqli_query($con, $insert_query);
 
     if ($sql_execute) {
         echo "<script>alert('Data inserted successfully');</script>";
-    } else {
+    }else {
         die(mysqli_error($con));
+    }
     }
 }
 ?>
