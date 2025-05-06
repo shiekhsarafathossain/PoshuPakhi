@@ -1,14 +1,13 @@
 <!-- Connect File -->
 <?php
-  include("Includes/connect.php");
-  include("functions/common_function.php");
+  include("../Includes/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoshuPakhi</title>
+    <title>PoshuPakhi Checkout</title>
 <!-- Bootstrap CSS Link Start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <!-- Bootstrap CSS Link End -->
@@ -18,7 +17,7 @@
 <!-- Font Awesome Link End -->
 
 <!-- Style.css Link Start -->
- <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="./assets/css/style.css">
 <!-- Style.css Link End -->
 </head>
 <body>
@@ -31,7 +30,7 @@
         <a class="nav-link" href="">Welcome Guest</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="./users_area/user_login.php">Login</a>
+        <a class="nav-link" href="">Login</a>
       </li>
 
       </ul>
@@ -40,7 +39,7 @@
 <!-- First Part End -->
 
 <!-- Second Part Start -->
-    <div class="container-fluid p-0">
+<div class="container-fluid p-0">
         
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
@@ -63,13 +62,6 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup>Cart</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Total Price:<?php total_cart_price(); ?>/-</a>
-        </li>
-    
       </ul>
       <form class="d-flex" role="search" action="search_product.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
@@ -79,17 +71,15 @@
     </div>
   </div>
 </nav>
-    </div>
+</div>
 <!-- Second Part End -->
-  <?php
-    cart();
-  ?>
-<!-- calling cart function start -->
 
-
-<!-- calling cart function end -->
 
 <!-- Navbar End -->
+
+
+
+
 
 <!-- Center Part Start -->
 <!-- Title Part Start -->
@@ -101,42 +91,20 @@
 
 <!-- Title Part End -->
 
-<!-- Sidebar Start -->
-
-<div class="row m-auto"> <!-- row m-auto for fixing bug side width -->
-  <div class="col-md-2 bg-secondary p-0 text-center">
-  <!-- SideBar Start-->
-  <ul class="navbar-nav me-auto">
-    <li class="nav-item bg-info">
-      <h3>Category</h3>
-    </li>
-    
-  <?php
-    //calling function getCategory()
-    getCategory();
-    
-  ?>
-
-  <!-- SideBar End -->
-  </div>
-  <div class="col-md-9 m-auto">
+  <div class="col-md-12 m-auto">
     <!-- Product Start -->
     <div class="row">
-    
-    <!-- Php Code -->
+        <?php
+        
+        if(!isset($_SESSION['username'])){
+            include('user_login.php');
 
-    <?php
-    
-    //calling function getProducts()
-    getProducts();
-
-    //calling function getProducts()
-    getProductsbByCategories();
-
-    // $ip = getIPAddress();  
-    // echo 'User Real IP Address - '.$ip;  
-
-    ?>
+        }
+        else{
+            include('../payment.php');
+        }
+        
+        ?>
 
     </div>
     <!-- Product End -->
@@ -148,7 +116,7 @@
 
 <!-- Footer Start -->
 <?php
-  include("includes/footer.php");
+  include("../includes/footer.php");
 ?>
 <!-- Footer End -->
     

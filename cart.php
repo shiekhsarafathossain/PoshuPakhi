@@ -156,7 +156,7 @@
                 <input type="submit" value="Update Cart" class="btn btn-info text-white mx-2" name="update_cart">
                 <input type="submit" value="Remove Selected" class="btn btn-danger text-white mx-2" name="remove_cart">
                 <a href="index.php" class="btn btn-secondary">Continue Shopping</a>
-                <a href="#" class="btn btn-success">Checkout</a>
+                <a href="./users_area/checkout.php" class="btn btn-success">Checkout</a>
               </div>
             </div>
           </form>
