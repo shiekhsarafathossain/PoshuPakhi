@@ -105,7 +105,7 @@
 
 <!-- Title Part End -->
 
-  <div class="col-md-12 m-auto">
+  <div class="col-md-12">
     <!-- Product Start -->
     <div class="row">
         <?php

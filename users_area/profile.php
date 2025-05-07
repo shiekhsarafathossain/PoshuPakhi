@@ -42,12 +42,12 @@
      
         if(!isset($_SESSION['username'])){
           echo "<li class='nav-item'>
-        <a class='nav-link' href='./users_area/user_login.php'>Login</a>
+        <a class='nav-link' href='user_login.php'>Login</a>
       </li>";
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+        <a class='nav-link' href='logout.php'>Logout</a>
       </li>";
         }
 
@@ -115,7 +115,7 @@
 
 <!-- Sidebar Start -->
 
-<div class="row m-auto"> <!-- row m-auto for fixing bug side width -->
+<div class="row mx-0"> <!-- row m-auto for fixing bug side width -->
     <div class="col-md-2 bg-secondary p-0 text-center">
     <!-- SideBar Start-->
         <ul class="navbar-nav me-auto">
@@ -158,9 +158,13 @@
     </div>
     <!-- SideBar End -->
     
-    <div class="col-md-10">
+    <div class="col-md-10 text-center">
     <!-- Product Start -->
-        <?php get_user_order_details(); ?>
+        <?php get_user_order_details(); 
+        if(isset($_GET['edit_account'])){
+          include('edit_account.php');
+        }
+        ?>
     <!-- Product End -->
     </div>
 

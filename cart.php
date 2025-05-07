@@ -113,7 +113,7 @@
 </div>
 
 <!-- Main Content -->
-<div class="row m-auto">
+<div class="row mx-0">
   <div class="col-md-2 bg-secondary p-0 text-center">
     <!-- Sidebar Start -->
     <ul class="navbar-nav me-auto">
