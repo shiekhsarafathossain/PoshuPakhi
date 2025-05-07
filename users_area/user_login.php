@@ -23,35 +23,32 @@
     <h2 class="text-center">User Login</h2>
     <div class="row d-flex align-items-center justify-content-center">
         <div class="col-lg-12 col-xl-6">
-            <form action="" method="post" enctype="multipart/form-data"> </form>
-            <!-- username field start -->
-            <div class="form-outline mb-4">
-                <label for="user_username" class="form-label">Username</label>
-                <input type="text" id="user_username" class="form-control" placeholder="Enter your username" autocomplete="off" required="required" name="user_username">
-            </div>
-            <!-- username field end -->
+            <form action="login_process.php" method="post" enctype="multipart/form-data">
+                <!-- username field start -->
+                <div class="form-outline mb-4">
+                    <label for="user_username" class="form-label">Username</label>
+                    <input type="text" id="user_username" class="form-control" placeholder="Enter your username" autocomplete="off" required name="user_username">
+                </div>
+                <!-- username field end -->
 
+                <!-- user password field start -->
+                <div class="form-outline mb-4">
+                    <label for="user_password" class="form-label">Password</label>
+                    <input type="password" id="user_password" class="form-control" placeholder="Enter password" autocomplete="off" required name="user_password">
+                </div>
+                <!-- user password field end -->
 
-
-            <!-- user password field start -->
-            <div class="form-outline mb-4">
-                <label for="user_password" class="form-label">Password</label>
-                <input type="password" id="user_password" class="form-control" placeholder="Enter password" autocomplete="off" required="required" name="user_email">
-            </div>
-            <!-- user password field end -->
-
-
-
-            <div class="mt-4 pt-2">
-                <input type="submit" value="Login" class="bg-info py-3 px-3 border-0" name="user_login">
-            </div>
+                <div class="mt-4 pt-2">
+                    <input type="submit" value="Login" class="bg-info py-3 px-3 border-0 text-white w-100" name="user_login">
+                </div>
+            </form>
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="user_registration.php" class="text-danger">Register</a></p>
-            
-
         </div>
     </div>
 </div>
 
+<!-- Bootstrap JS Link -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+rkY0EGbIBq4zG+bz3GMN5t9UJ0Z+" crossorigin="anonymous"></script>
 
 </body>
 </html>

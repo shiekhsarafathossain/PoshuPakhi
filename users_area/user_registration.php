@@ -71,7 +71,7 @@ include("../functions/common_function.php");
 
                 <!-- Submit Button -->
                 <div class="mt-4 pt-2">
-                    <input type="submit" value="Register" class="bg-info py-3 px-3 border-0" name="user_register">
+                    <input type="submit" value="Register" class="bg-info py-3 px-3 border-0 text-white w-100" name="user_register">
                 </div>
 
                 <p class="small fw-bold mt-2 pt-1 mb-0">
@@ -132,6 +132,21 @@ if (isset($_POST['user_register'])) {
     }else {
         die(mysqli_error($con));
     }
+    }
+
+    //selecting cart items
+
+    $select_cart = "SELECT * FROM cart_details WHERE ip_address ='$user_ip'";
+    $result_cart = mysqli_query($con,$select_cart);
+    $rows_count = mysqli_num_rows($result_cart);
+
+    if($rows_count>0){
+        $_SESSION['username']=$user_username;
+        echo "<script>alert('You have items in your cart');</script>";
+        echo "<script>window.open('checkout.php','_self');</script>";
+    }
+    else{
+        echo "<script>window.open('../index.php','_self');</script>";
     }
 }
 ?>
