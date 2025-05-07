@@ -2,6 +2,7 @@
 <?php
   include("Includes/connect.php");
   include("functions/common_function.php");
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,16 +25,32 @@
 <body>
 <!-- Navbar Start -->
 <!-- First Part Start -->
-    <div class="navbar navbar-expand-lg bg-light">
+<div class="navbar navbar-expand-lg bg-light">
       <ul class="navbar-nav me-auto">
+      <?php
+      if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='#'>Welcome Guest</a>
+      </li>";
+        }
+        else{
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+      </li>";
+        }
+     
+        if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='./users_area/user_login.php'>Login</a>
+      </li>";
+        }
+        else{
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+      </li>";
+        }
 
-      <li class="nav-item">
-        <a class="nav-link" href="">Welcome Guest</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="">Login</a>
-      </li>
-
+      ?>
       </ul>
 
     </div>
@@ -44,8 +61,8 @@
         
 <nav class="navbar navbar-expand-lg bg-info">
   <div class="container-fluid">
-    <img src="./assets/images/logo.png" alt="logo" class="logo">
-    <a class="navbar-brand" href="#">PoshuPakhi Logo</a>
+    
+    <a class="navbar-brand" href="index.php"><img src="./assets/images/logo.png" alt="logo" class="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -58,7 +75,7 @@
           <a class="nav-link" href="display_all.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Register</a>
+          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
