@@ -171,8 +171,8 @@ function getCategory(){
     while($row_data = mysqli_fetch_assoc($result_category)){
         $category_title = $row_data['category_title'];
         $category_id = $row_data['category_id'];
-        echo "<li class='nav-item bg-info'>
-        <a href='index.php?categories=$category_id' class='nav-link bg-primary'>$category_title</a>
+        echo "<li class='nav-item category-item'>
+        <a href='index.php?categories=$category_id' class='nav-link'>$category_title</a>
         </li>";
     }
 }

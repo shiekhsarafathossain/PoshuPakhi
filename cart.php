@@ -19,79 +19,7 @@
 </head>
 <body>
 <!-- Navbar Start -->
-<!-- First Part Start -->
-<div class="navbar navbar-expand-lg login-bar">
-      <ul class="navbar-nav me-auto">
-      <?php
-      if(!isset($_SESSION['username'])){
-          echo "<li class='nav-item'>
-        <a class='nav-link' href='#'>Welcome Guest</a>
-      </li>";
-        }
-        else{
-          echo "<li class='nav-item'>
-        <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
-      </li>";
-        }
-     
-        if(!isset($_SESSION['username'])){
-          echo "<li class='nav-item'>
-        <a class='nav-link' href='./users_area/user_login.php'>Login</a>
-      </li>";
-        }
-        else{
-          echo "<li class='nav-item'>
-        <a class='nav-link' href='./users_area/logout.php'>Logout</a>
-      </li>";
-        }
-
-      ?>
-      </ul>
-
-    </div>
-<!-- First Part End -->
-
-<!-- Second Part Start -->
-    <div class="container-fluid p-0">
-        
-<nav class="navbar navbar-expand-lg nav-custom">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php"><img src="./assets/images/logo.png" alt="logo" class="logo"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="display_all.php">Products</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cart.php"><i class="fa-solid fa-cart-shopping"></i><sup><?php cart_item(); ?></sup>Cart</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Total Price:<?php total_cart_price(); ?>/-</a>
-        </li>
-    
-      </ul>
-      <form class="d-flex" role="search" action="search_product.php" method="GET">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
-
-        <input class="btn btn-outline-light" type="submit" value="Search" name="search_data_product">
-      </form>
-    </div>
-  </div>
-</nav>
-</div>
-<!-- Second Part End -->
+<?php include("Includes/navbar.php"); ?>
 <!-- Navbar End -->
 
 <!-- calling cart -->
@@ -99,11 +27,7 @@
 
 
 <!-- Title Section -->
-<div class="bg-light">
-  <h3 class="text-center">PoshuPakhi</h3>
-  <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, molestiae.</p>
-</div>
-
+<?php include("Includes/title_bar.php"); ?>
 <!-- Main Content -->
 <div class="row mx-0">
   <div class="col-md-2 bg-secondary p-0 text-center">
@@ -183,10 +107,10 @@
             <div class="d-flex justify-content-between mb-4">
               <h4>Subtotal: <strong class="text-info"><?php echo $total_price; ?>/-</strong></h4>
               <div>
-                <input type="submit" value="Update Cart" class="btn btn-info text-white mx-2" name="update_cart">
+                <input type="submit" value="Update Cart" class="btn btn-secondary text-white mx-2" name="update_cart">
                 <input type="submit" value="Remove Selected" class="btn btn-danger text-white mx-2" name="remove_cart">
-                <a href="index.php" class="btn btn-secondary">Continue Shopping</a>
-                <a href="./users_area/checkout.php" class="btn btn-success">Checkout</a>
+                <a href="index.php" class="btn btn-secondary text-white mx-2">Continue Shopping</a>
+                <a href="./users_area/checkout.php" class="btn btn-success text-white mx-2" style="margin-right:0 !important; ">Checkout</a>
               </div>
             </div>
           </form>

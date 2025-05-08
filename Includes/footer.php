@@ -1,4 +1,4 @@
-<footer class="py-3 bg-info text-center" style="width: 100%; margin: 0; padding: 0; position: relative; clear: both; min-height: 50px;">
+<footer class="py-3 bg-info text-center footer-custom" style="width: 100%; margin: 0; padding: 0; position: relative; clear: both; min-height: 50px;">
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
         <ul class="nav justify-content-center mb-1" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 15px;">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
