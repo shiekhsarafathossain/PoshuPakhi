@@ -164,6 +164,12 @@
         if(isset($_GET['edit_account'])){
           include('edit_account.php');
         }
+        if(isset($_GET['my_orders'])){
+          include('user_orders.php');
+        }
+        if(isset($_GET['delete_account'])){
+          include('delete_account.php');
+        }
         ?>
     <!-- Product End -->
     </div>
