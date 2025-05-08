@@ -11,7 +11,7 @@ function getProducts(){
     if(!isset($_GET['categories'])){
 
     // Fetching the products
-    $select_query = "SELECT * FROM products ORDER BY rand() LIMIT 0,2";
+    $select_query = "SELECT * FROM products ORDER BY rand() LIMIT 0,5";
     $result_query = mysqli_query($con,$select_query);
     // $row = mysqli_fetch_assoc($result_query);
     // echo $row['product_title'];
@@ -25,18 +25,26 @@ function getProducts(){
       $product_image2 = $row['product_image2'];
       $product_image3 = $row['product_image3'];
       $product_price = $row['product_price'];
+      // limit title to 30 characters
+      $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
+
+      // limit description to 100 characters
+      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+
       echo "<div class='col-md-4 mb-3'>
-      <div class='card'>
-        <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-        <div class='card-body'>
-          <h5 class='card-title'>$product_title</h5>
-          <p class='card-text'>$product_description</p>
-          <p class='card-text'>Price: $product_price</p>
-          <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-        </div>
-      </div>
-    </div>";
+            <div class='card h-100'>
+              <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+              <div class='card-body d-flex flex-column'>
+                <h5 class='card-title title-fixed'>$short_title</h5>
+                <p class='card-text description-fixed'>$short_description</p>
+                <p class='card-text price'>Price: $product_price BDT</p>
+                <div class='mt-auto'>
+                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                </div>
+              </div>
+            </div>
+          </div>";
     }
 
     }
@@ -67,18 +75,26 @@ function getAllProducts(){
       $product_image2 = $row['product_image2'];
       $product_image3 = $row['product_image3'];
       $product_price = $row['product_price'];
+      // limit title to 30 characters
+      $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
+
+      // limit description to 100 characters
+      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+
       echo "<div class='col-md-4 mb-3'>
-      <div class='card'>
-        <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-        <div class='card-body'>
-          <h5 class='card-title'>$product_title</h5>
-          <p class='card-text'>$product_description</p>
-          <p class='card-text'>Price: $product_price</p>
-          <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-        </div>
-      </div>
-    </div>";
+            <div class='card h-100'>
+              <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+              <div class='card-body d-flex flex-column'>
+                <h5 class='card-title title-fixed'>$short_title</h5>
+                <p class='card-text description-fixed'>$short_description</p>
+                <p class='card-text price'>Price: $product_price BDT</p>
+                <div class='mt-auto'>
+                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                </div>
+              </div>
+            </div>
+          </div>";
     }
 
     }
@@ -115,18 +131,26 @@ function getProductsbByCategories(){
       $product_image2 = $row['product_image2'];
       $product_image3 = $row['product_image3'];
       $product_price = $row['product_price'];
+      // limit title to 30 characters
+      $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
+
+      // limit description to 100 characters
+      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+
       echo "<div class='col-md-4 mb-3'>
-      <div class='card'>
-        <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-        <div class='card-body'>
-          <h5 class='card-title'>$product_title</h5>
-          <p class='card-text'>$product_description</p>
-          <p class='card-text'>Price: $product_price</p>
-          <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-        </div>
-      </div>
-    </div>";
+            <div class='card h-100'>
+              <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+              <div class='card-body d-flex flex-column'>
+                <h5 class='card-title title-fixed'>$short_title</h5>
+                <p class='card-text description-fixed'>$short_description</p>
+                <p class='card-text price'>Price: $product_price BDT</p>
+                <div class='mt-auto'>
+                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                </div>
+              </div>
+            </div>
+          </div>";
     }
     }
 
@@ -182,18 +206,26 @@ function searchProducts(){
       $product_image2 = $row['product_image2'];
       $product_image3 = $row['product_image3'];
       $product_price = $row['product_price'];
+      // limit title to 30 characters
+      $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
+
+      // limit description to 100 characters
+      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+
       echo "<div class='col-md-4 mb-3'>
-      <div class='card'>
-        <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
-        <div class='card-body'>
-          <h5 class='card-title'>$product_title</h5>
-          <p class='card-text'>$product_description</p>
-          <p class='card-text'>Price: $product_price</p>
-          <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-          <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
-        </div>
-      </div>
-    </div>";
+            <div class='card h-100'>
+              <img src='./assets/images/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+              <div class='card-body d-flex flex-column'>
+                <h5 class='card-title title-fixed'>$short_title</h5>
+                <p class='card-text description-fixed'>$short_description</p>
+                <p class='card-text price'>Price: $product_price BDT</p>
+                <div class='mt-auto'>
+                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                </div>
+              </div>
+            </div>
+          </div>";
     }
 
     }

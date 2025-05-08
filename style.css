@@ -29,3 +29,33 @@
 }
 /* cart.php end */
 
+
+
+
+
+
+
+/* card style start */
+.card-img-top{
+  height: 200px;
+}
+
+.title-fixed {
+  height: 1.5em; /* fits 1-2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description-fixed {
+  height: 4em; /* fits around 4-5 lines */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.price{
+  font-size: large;
+  font-weight: bolder;
+}
+
+/* card style end */
