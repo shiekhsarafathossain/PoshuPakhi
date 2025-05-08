@@ -15,20 +15,12 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <!-- Custom Style -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <style>
-    .cart_img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!-- Navbar Start -->
 <!-- First Part Start -->
-<div class="navbar navbar-expand-lg bg-light">
+<div class="navbar navbar-expand-lg login-bar">
       <ul class="navbar-nav me-auto">
       <?php
       if(!isset($_SESSION['username'])){
@@ -62,7 +54,7 @@
 <!-- Second Part Start -->
     <div class="container-fluid p-0">
         
-<nav class="navbar navbar-expand-lg bg-info">
+<nav class="navbar navbar-expand-lg nav-custom">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><img src="./assets/images/logo.png" alt="logo" class="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

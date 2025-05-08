@@ -19,14 +19,14 @@
 <!-- Font Awesome Link End -->
 
 <!-- Style.css Link Start -->
- <link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="style.css">
 <!-- Style.css Link End -->
 
 </head>
-<body>
+<body class="open-sans-font">
 <!-- Navbar Start -->
 <!-- First Part Start -->
-<div class="navbar navbar-expand-lg bg-light">
+<div class="navbar navbar-expand-lg login-bar">
       <ul class="navbar-nav me-auto">
       <?php
       if(!isset($_SESSION['username'])){
@@ -60,7 +60,7 @@
 <!-- Second Part Start -->
     <div class="container-fluid p-0">
         
-<nav class="navbar navbar-expand-lg bg-info">
+<nav class="navbar navbar-expand-lg nav-custom">
   <div class="container-fluid">
     
     <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo.png" alt="logo" class="logo"></a>
@@ -120,7 +120,7 @@
     <!-- SideBar Start-->
         <ul class="navbar-nav me-auto">
             <li class="nav-item bg-info text-light">
-                <h4>Your Profile</h4>
+                <h4 class="pt-2">Your Profile</h4>
             </li>
 
             <?php
@@ -130,8 +130,8 @@
             $row_image = mysqli_fetch_array($user_image);
             $user_image = $row_image['user_image'];
             
-            echo "<li class='nav-item bg-info text-light'>
-            <img src='../assets/images/user_images/$user_image' style='width:100px' alt='User Image'>
+            echo "<li class='nav-item bg-info text-light '>
+            <img src='../assets/images/user_images/$user_image' alt='User Image' class='pp-image'>
             </li>"
 
             ?>

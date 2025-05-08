@@ -19,14 +19,19 @@
 <!-- Font Awesome Link End -->
 
 <!-- Style.css Link Start -->
- <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="style.css">
 <!-- Style.css Link End -->
 
+<style>
+  
+
+</style>
+
 </head>
-<body>
+<body class="open-sans-font">
 <!-- Navbar Start -->
 <!-- First Part Start -->
-<div class="navbar navbar-expand-lg bg-light">
+<div class="navbar navbar-expand-lg login-bar">
       <ul class="navbar-nav me-auto">
       <?php
       if(!isset($_SESSION['username'])){
@@ -60,7 +65,7 @@
 <!-- Second Part Start -->
     <div class="container-fluid p-0">
         
-<nav class="navbar navbar-expand-lg bg-info">
+<nav class="navbar navbar-expand-lg nav-custom">
   <div class="container-fluid">
     
     <a class="navbar-brand" href="index.php"><img src="./assets/images/logo.png" alt="logo" class="logo"></a>

@@ -19,13 +19,15 @@
 <!-- Font Awesome Link End -->
 
 <!-- Style.css Link Start -->
- <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="style.css">
 <!-- Style.css Link End -->
+
+
 </head>
-<body>
+<body class="open-sans-font">
 <!-- Navbar Start -->
 <!-- First Part Start -->
-<div class="navbar navbar-expand-lg bg-light">
+<div class="navbar navbar-expand-lg login-bar">
       <ul class="navbar-nav me-auto">
       <?php
       if(!isset($_SESSION['username'])){
@@ -35,7 +37,7 @@
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+        <a class='nav-link' href='./users_area/profile.php'>Welcome ".$_SESSION['username']."</a>
       </li>";
         }
      
@@ -59,7 +61,7 @@
 <!-- Second Part Start -->
     <div class="container-fluid p-0">
         
-<nav class="navbar navbar-expand-lg bg-info">
+<nav class="navbar navbar-expand-lg nav-custom">
   <div class="container-fluid">
     
     <a class="navbar-brand" href="index.php"><img src="./assets/images/logo.png" alt="logo" class="logo"></a>
@@ -98,6 +100,14 @@
 </nav>
     </div>
 <!-- Second Part End -->
+  <?php
+    cart();
+  ?>
+<!-- calling cart function start -->
+
+
+<!-- calling cart function end -->
+
 <!-- Navbar End -->
 
 <!-- Center Part Start -->
@@ -112,7 +122,7 @@
 
 <!-- Sidebar Start -->
 
-<div class="row m-auto"> <!-- row m-auto for fixing bug side width -->
+<div class="row mx-0"> <!-- row m-auto for fixing bug side width -->
   <div class="col-md-2 bg-secondary p-0 text-center">
   <!-- SideBar Start-->
   <ul class="navbar-nav me-auto">
@@ -131,16 +141,18 @@
   <div class="col-md-9 m-auto">
     <!-- Product Start -->
     <div class="row">
+    
     <!-- Php Code -->
 
     <?php
     
-    //calling function getProducts()
-   // getProducts();
-   //calling product details
-   view_details();
+    //calling function view_details()
+    view_details();
     //calling function getProducts()
     getProductsbByCategories();
+
+    // $ip = getIPAddress();  
+    // echo 'User Real IP Address - '.$ip;  
 
     ?>
 

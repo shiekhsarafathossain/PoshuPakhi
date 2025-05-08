@@ -19,13 +19,19 @@
 <!-- Font Awesome Link End -->
 
 <!-- Style.css Link Start -->
- <link rel="stylesheet" href="./assets/css/style.css">
+<link rel="stylesheet" href="style.css">
 <!-- Style.css Link End -->
+
+<style>
+  
+
+</style>
+
 </head>
-<body>
+<body class="open-sans-font">
 <!-- Navbar Start -->
 <!-- First Part Start -->
-<div class="navbar navbar-expand-lg bg-light">
+<div class="navbar navbar-expand-lg login-bar">
       <ul class="navbar-nav me-auto">
       <?php
       if(!isset($_SESSION['username'])){
@@ -35,7 +41,7 @@
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+        <a class='nav-link' href='./users_area/profile.php'>Welcome ".$_SESSION['username']."</a>
       </li>";
         }
      
@@ -59,8 +65,9 @@
 <!-- Second Part Start -->
     <div class="container-fluid p-0">
         
-<nav class="navbar navbar-expand-lg bg-info">
+<nav class="navbar navbar-expand-lg nav-custom">
   <div class="container-fluid">
+    
     <a class="navbar-brand" href="index.php"><img src="./assets/images/logo.png" alt="logo" class="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -97,6 +104,14 @@
 </nav>
     </div>
 <!-- Second Part End -->
+
+<!-- calling cart function start -->
+<?php
+    cart();
+?>
+
+<!-- calling cart function end -->
+
 <!-- Navbar End -->
 
 <!-- Center Part Start -->
@@ -141,6 +156,9 @@
     //calling function getProducts()
     getProductsbByCategories();
 
+    // $ip = getIPAddress();  
+    // echo 'User Real IP Address - '.$ip;  
+
     ?>
 
     </div>
@@ -156,7 +174,6 @@
   include("includes/footer.php");
 ?>
 <!-- Footer End -->
-    
     
 <!-- Bootstrap JS Link Start -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
