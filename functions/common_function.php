@@ -39,8 +39,8 @@ function getProducts(){
                 <p class='card-text description-fixed'>$short_description</p>
                 <p class='card-text price'>Price: $product_price BDT</p>
                 <div class='mt-auto'>
-                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                  <a href='index.php?add_to_cart=$product_id' class='btn button-addtocart-color'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn button-viewmore-color'>View More</a>
                 </div>
               </div>
             </div>
