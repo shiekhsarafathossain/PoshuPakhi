@@ -164,7 +164,7 @@ body{
     getCategory();
     
   ?>
-
+  </ul>
   <!-- SideBar End -->
   </div>
 

@@ -26,12 +26,12 @@ if(isset($_POST["insert_cat"])){
   <form action="" method="post" class="mb-2">
 
   <div class="input-group w-90 mb-2">
-    <span class="input-group-text bg-primary" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
+    <span class="input-group-text" style="background-color: #C4D9FF !important;" id="basic-addon1"><i class="fa-solid fa-receipt"></i></span>
     <input type="text" class="form-control" name="cat_title" placeholder="Insert Categories" aria-label="Categories" aria-describedby="basic-addon1">
   </div>
   <div class="input-group w-10 mb-2 m-auto">
 
-    <input type="submit" class=" btn btn-group bg-primary text-light" name="insert_cat" value="Insert Categories">
+    <input type="submit" class=" btn button-addtocart-color" name="insert_cat" value="Insert Categories">
   
   </div>
   </form>
