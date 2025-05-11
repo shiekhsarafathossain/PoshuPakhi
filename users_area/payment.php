@@ -3,6 +3,49 @@ include("../Includes/connect.php");
 include("../functions/common_function.php");
 ?>
 
+<?php
+$user_ip =getIPAddress();
+$get_user = "SELECT * FROM user_table WHERE user_ip='$user_ip'";
+$result = mysqli_query($con,$get_user);
+
+$run_query = mysqli_fetch_array($result);
+$user_id = $run_query['user_id'];
+
+global $con;
+$get_ip_address = getIPAddress();
+$total_price = 0;
+
+$cart_query = "SELECT * FROM cart_details WHERE ip_address='$get_ip_address'";
+$result = mysqli_query($con, $cart_query);
+$delivery=60;
+
+if (mysqli_num_rows($result) == 0) {
+  $money=0;
+  $delivery=0;
+  echo "<script>alert('add product to cart')</script>";
+  echo "<script>window.open('../display_all.php','_self')</script>";
+  }
+
+while ($row = mysqli_fetch_array($result)) {
+  $product_id = $row['product_id'];
+  $quantity = $row['quantity'];
+
+  $product_query = "SELECT * FROM products WHERE product_id = '$product_id'";
+  $product_result = mysqli_query($con, $product_query);
+
+  while ($product = mysqli_fetch_array($product_result)) {
+  $title = $product['product_title'];
+  $image = $product['product_image1'];
+  $price = $product['product_price'];
+  $sub_total = $price * $quantity;
+  $total_price += $sub_total;
+
+    }
+  }
+?>
+               
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +69,7 @@ include("../functions/common_function.php");
 <body>
 
 <div class="col-md-9 m-auto my-4">
-  <div class="row">
+  <div class="row mx-0">
     
     <!-- Left: Payment Method -->
     <div class="col-md-7">
@@ -89,19 +132,21 @@ include("../functions/common_function.php");
         <hr>
         <div class="d-flex justify-content-between">
           <span>Subtotal</span>
-          <span>TK. 320</span>
+          <span>TK. <?php echo"$total_price" ?></span>
         </div>
         <div class="d-flex justify-content-between">
-          <span>Online Fee</span>
-          <span>TK. 48</span>
+          <span>Delivery Charge</span>
+          <span>TK. <?php echo"$delivery" ?></span>
         </div>
         <hr>
         <div class="d-flex justify-content-between fw-bold">
           <span>Total</span>
-          <span>TK. 368</span>
+          <span>TK. <?php $money=round($total_price+$delivery);
+          echo "$money";
+          ?></span>
         </div>
 
-        <!-- Voucher -->
+        <!-- Voucher
         <div class="mt-3">
           <label for="voucher" class="form-label">Apply Voucher or Promo Code</label>
           <div class="input-group">
@@ -109,19 +154,20 @@ include("../functions/common_function.php");
             <button class="btn btn-primary">Apply</button>
           </div>
           <div class="text-success mt-1">You are saving 80 TK</div>
-        </div>
+        </div> -->
 
         <!-- Confirm Button -->
-        <button class="btn btn-primary w-100 mt-4">Confirm Order TK. 368</button>
+        <!-- <button class="btn btn-primary w-100 mt-4">Confirm Order TK. 368</button> -->
+        <a href="order.php?user_id=<?php echo $user_id ?>"><button class="btn btn-primary w-100 mt-4">Confirm Order TK. <?php echo "$money";
+          ?></button></a>
       </div>
     </div>
     
   </div>
 </div>
 
-
 <!-- Center Part End -->
-</div>
+
 
 
     

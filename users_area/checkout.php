@@ -20,64 +20,175 @@
 <!-- Style.css Link Start -->
 <link rel="stylesheet" href="../assets/css/style.css">
 <!-- Style.css Link End -->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
+
+.open-sans-font {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.logo{
+  width:100px;
+}
+
+/* card style start */
+.card-img-top{
+  height: 200px;
+}
+
+.title-fixed {
+  height: 1.5em; /* fits 1-2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description-fixed {
+  height: 4em; /* fits around 4-5 lines */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.price{
+  font-size: large;
+  font-weight: bolder;
+}
+
+/* card style end */
+
+.nav-custom{
+  background-color: #C5BAFF !important;
+}
+/* dfgdfd */
+
+/* cart.php start */
+.cart_img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+/* cart.php end */
+
+.top-bar{
+  background-color: #C4D9FF !important;
+}
+
+body{
+   background-color: white !important;
+}
+
+.footer-custom{
+  background-color: #C5BAFF !important;
+}
+.category-item{
+  background-color: #E8F9FF !important;
+  margin: 5px;
+  border-radius: 5px; 
+}
+.button-addtocart-color{
+    background-color: #C4D9FF !important;
+    font-weight: bold;
+}
+.button-addtocart-color:hover{
+  transform: translateX(-5px);
+  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
+}
+.button-viewmore-color{
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.category-item:hover{
+  transform: translateX(-5px);
+  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
+  background-color: #C4D9FF !important;
+
+}
+
+
+.side-bar{
+  height: 100%;
+  background-color: #E8F9FF !important;
+}
+
+.category-title{
+  background-color: #E8F9FF !important;
+  font-size: large;
+  font-weight: bold;
+  border-radius:50px;
+}
+
+
+
+
+
+</style>
 </head>
 <body>
 <!-- Navbar Start -->
 <!-- First Part Start -->
-    <div class="navbar navbar-expand-lg bg-light">
+<div class="navbar navbar-expand-lg login-bar">
       <ul class="navbar-nav me-auto">
-
-      <li class="nav-item">
-        <a class="nav-link" href="">Welcome Guest</a>
-      </li>
       <?php
-        if(!isset($_SESSION['username'])){
+      if(!isset($_SESSION['username'])){
           echo "<li class='nav-item'>
-        <a class='nav-link' href='./user_login.php'>Login</a>
+        <a class='nav-link' href='#'>Welcome Guest</a>
       </li>";
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='logout.php'>Logout</a>
+        <a class='nav-link' href='./users_area/profile.php'>Welcome ".$_SESSION['username']."</a>
+      </li>";
+        }
+     
+        if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='./users_area/user_login.php'>Login</a>
+      </li>";
+        }
+        else{
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='./users_area/logout.php'>Logout</a>
       </li>";
         }
 
       ?>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li> -->
-
       </ul>
 
     </div>
 <!-- First Part End -->
 
 <!-- Second Part Start -->
-<div class="container-fluid p-0">
+    <div class="container-fluid p-0">
         
-<nav class="navbar navbar-expand-lg bg-info">
+<nav class="navbar navbar-expand-lg nav-custom">
   <div class="container-fluid">
     
-    <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo.png" alt="logo" class="logo"></a>
+    <a class="navbar-brand" href="index.php"><img src="../assets/images/logo.png" alt="logo" class="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../display_all.php">Products</a>
+          <a class="nav-link" href="display_all.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="user_registration.php">Register</a>
+          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
-      <form class="d-flex" role="search" action="../search_product.php" method="GET">
+      <form class="d-flex" role="search" action="search_product.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
 
         <input class="btn btn-outline-light" type="submit" value="Search" name="search_data_product">
@@ -85,8 +196,10 @@
     </div>
   </div>
 </nav>
-</div>
+    </div>
 <!-- Second Part End -->
+  
+
 
 
 <!-- Navbar End -->
@@ -98,16 +211,16 @@
 <!-- Center Part Start -->
 <!-- Title Part Start -->
 
-<div class="bg-light">
-  <h3 class="text-center">PoshuPakhi</h3>
-  <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
+<div class="top-bar">
+  <h3 class="text-center pt-2 "style="margin-bottom:0"; >PoshuPakhi</h3>
+  <p class="text-center pb-2" style="margin-bottom:0; padding-tip:0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
 </div>
 
 <!-- Title Part End -->
 
   <div class="col-md-12">
     <!-- Product Start -->
-    <div class="row">
+    <div class="row mx-0">
         <?php
         
         if(!isset($_SESSION['username'])){
