@@ -75,7 +75,7 @@ function getAllProducts(){
       $product_image2 = $row['product_image2'];
       $product_image3 = $row['product_image3'];
       $product_price = $row['product_price'];
-      // limit title to 30 characters
+     // limit title to 30 characters
       $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
 
       // limit description to 100 characters
@@ -89,8 +89,8 @@ function getAllProducts(){
                 <p class='card-text description-fixed'>$short_description</p>
                 <p class='card-text price'>Price: $product_price BDT</p>
                 <div class='mt-auto'>
-                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                  <a href='index.php?add_to_cart=$product_id' class='btn button-addtocart-color'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn button-viewmore-color'>View More</a>
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@ function getProductsbByCategories(){
       $product_image2 = $row['product_image2'];
       $product_image3 = $row['product_image3'];
       $product_price = $row['product_price'];
-      // limit title to 30 characters
+     // limit title to 30 characters
       $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
 
       // limit description to 100 characters
@@ -145,8 +145,8 @@ function getProductsbByCategories(){
                 <p class='card-text description-fixed'>$short_description</p>
                 <p class='card-text price'>Price: $product_price BDT</p>
                 <div class='mt-auto'>
-                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                  <a href='index.php?add_to_cart=$product_id' class='btn button-addtocart-color'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn button-viewmore-color'>View More</a>
                 </div>
               </div>
             </div>
@@ -220,8 +220,8 @@ function searchProducts(){
                 <p class='card-text description-fixed'>$short_description</p>
                 <p class='card-text price'>Price: $product_price BDT</p>
                 <div class='mt-auto'>
-                  <a href='index.php?add_to_cart=$product_id' class='btn btn-primary'>Add to cart</a>
-                  <a href='product_details.php?product_id=$product_id' class='btn btn-secondary'>View More</a>
+                  <a href='index.php?add_to_cart=$product_id' class='btn button-addtocart-color'>Add to cart</a>
+                  <a href='product_details.php?product_id=$product_id' class='btn button-viewmore-color'>View More</a>
                 </div>
               </div>
             </div>
