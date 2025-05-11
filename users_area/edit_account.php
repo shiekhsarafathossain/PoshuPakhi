@@ -76,7 +76,7 @@ if(isset($_GET['edit_account'])){
             <!-- <img src="../assets/images/user_images/<?php echo $user_image ?>" alt="User Image" style="width:100px"> -->
         </div>
         <div class="form-outline mb-4">
-            <input type="submit" value="Update" class="bg-info py-2 px-3 border-0" name="user_update">
+            <input type="submit" value="Update" class="btn button-addtocart-color" name="user_update">
         </div>
 
     </form>

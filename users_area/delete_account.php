@@ -9,10 +9,10 @@
     <h3 class="text-danger mb-4">Delete Account</h3>
     <form class="mt-5" action="" method="post">
         <div class="form-outline mt-5">
-            <input type="submit" class="bg-danger btn m-auto w-50" name="delete" value="Delete Account">
+            <input type="submit" class="btn m-auto w-50 button-addtocart-color" name="delete" value="Delete Account">
         </div>
         <div class="form-outline mt-5">
-            <input type="submit" class="bg-success btn m-auto w-50" name="dont_delete" value="Don't Delete Account">
+            <input type="submit" class="btn m-auto w-50 button-viewmore-color" name="dont_delete" value="Don't Delete Account">
         </div>
     </form>
 </body>

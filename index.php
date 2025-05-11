@@ -98,11 +98,15 @@ body{
     font-weight: bold;
 }
 .button-addtocart-color:hover{
-  transform: translateX(-5px);
+  transform: translateY(-5px);
   box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
 }
 .button-viewmore-color{
   background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.button-viewmore-color:hover{
+  transform: translateY(-5px);
+  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
 }
 .category-item:hover{
   transform: translateX(-5px);
@@ -123,11 +127,6 @@ body{
   font-weight: bold;
   border-radius:50px;
 }
-
-
-
-
-
 </style>
 </head>
 <body class="open-sans-font">

@@ -43,10 +43,6 @@ while ($row = mysqli_fetch_array($result)) {
     }
   }
 ?>
-               
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

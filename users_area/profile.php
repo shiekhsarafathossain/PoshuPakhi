@@ -22,6 +22,118 @@
 <link rel="stylesheet" href="style.css">
 <!-- Style.css Link End -->
 
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
+
+.open-sans-font {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.logo{
+  width:100px;
+}
+
+/* card style start */
+.card-img-top{
+  height: 200px;
+}
+
+.title-fixed {
+  height: 1.5em; /* fits 1-2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description-fixed {
+  height: 4em; /* fits around 4-5 lines */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.price{
+  font-size: large;
+  font-weight: bolder;
+}
+
+/* card style end */
+
+.nav-custom{
+  background-color: #C5BAFF !important;
+}
+/* dfgdfd */
+
+/* cart.php start */
+.cart_img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+/* cart.php end */
+
+.top-bar{
+  background-color: #C4D9FF !important;
+}
+
+body{
+   background-color: white !important;
+}
+
+.footer-custom{
+  background-color: #C5BAFF !important;
+}
+.category-item{
+  background-color: #E8F9FF !important;
+  margin: 5px;
+  border-radius: 5px; 
+}
+.button-addtocart-color{
+    background-color: #C4D9FF !important;
+    font-weight: bold;
+}
+.button-addtocart-color:hover{
+  transform: translateY(-5px);
+  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
+}
+.button-viewmore-color:hover{
+  transform: translateY(-5px);
+  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
+}
+.button-viewmore-color{
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  font-weight: bold;
+}
+.category-item:hover{
+  transform: translateX(-5px);
+  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
+  background-color: #C4D9FF !important;
+
+}
+
+
+.side-bar{
+  height: 100%;
+  background-color: #E8F9FF !important;
+}
+
+.category-title{
+  background-color: #E8F9FF !important;
+  font-size: large;
+  font-weight: bold;
+  border-radius:50px;
+}
+
+
+
+</style>
+
 </head>
 <body class="open-sans-font">
 <!-- Navbar Start -->
@@ -36,7 +148,7 @@
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='#'>Welcome ".$_SESSION['username']."</a>
+        <a class='nav-link' href='profile.php'>Welcome ".$_SESSION['username']."</a>
       </li>";
         }
      
@@ -100,27 +212,24 @@
     </div>
 <!-- Second Part End -->
 
-
 <!-- Navbar End -->
 
 <!-- Center Part Start -->
 <!-- Title Part Start -->
-
-<div class="bg-light">
-  <h3 class="text-center">PoshuPakhi</h3>
-  <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
+<div class="top-bar">
+  <h3 class="text-center pt-2 "style="margin-bottom:0"; >PoshuPakhi</h3>
+  <p class="text-center pb-2" style="margin-bottom:0; padding-tip:0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
 </div>
-
 <!-- Title Part End -->
 
 <!-- Sidebar Start -->
 
 <div class="row mx-0"> <!-- row m-auto for fixing bug side width -->
-    <div class="col-md-2 bg-secondary p-0 text-center">
+    <div class="col-md-2 p-0 text-center">
     <!-- SideBar Start-->
-        <ul class="navbar-nav me-auto">
-            <li class="nav-item bg-info text-light">
-                <h4 class="pt-2">Your Profile</h4>
+        <ul class="navbar-nav me-auto side-bar">
+            <li class="nav-item category-title pt-2">
+                <h4 class="fw-bold">Your Profile</h4>
             </li>
 
             <?php
@@ -138,20 +247,20 @@
 
 
             
-            <li class="nav-item">
-                <a class="nav-link text-light" href="profile.php">Edit Pending Orders</a>
+            <li class="nav-item category-item">
+                <a class="nav-link" href="profile.php">Edit Pending Orders</a>
             </li>
-            <li class="nav-item text-light">
-                <a class="nav-link bg-info  text-light" href="profile.php?edit_account">Edit Account</a>
+            <li class="nav-item category-item">
+                <a class="nav-link" href="profile.php?edit_account">Edit Account</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link  text-light" href="profile.php?my_orders">My orders</a>
+            <li class="nav-item category-item">
+                <a class="nav-link" href="profile.php?my_orders">My Orders</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link bg-info   text-light" href="profile.php?delete_account">Delete Account</a>
+            <li class="nav-item category-item">
+                <a class="nav-link" href="profile.php?delete_account">Delete Account</a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link text-light" href="logout.php">Logout</a>
+            <li class="nav-item category-item">
+                <a class="nav-link" href="logout.php">Logout</a>
             </li>
         </ul>
 

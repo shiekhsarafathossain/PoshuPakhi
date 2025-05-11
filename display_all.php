@@ -21,7 +21,6 @@
 <!-- Style.css Link Start -->
 <link rel="stylesheet" href="style.css">
 <!-- Style.css Link End -->
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
@@ -98,11 +97,15 @@ body{
     font-weight: bold;
 }
 .button-addtocart-color:hover{
-  transform: translateX(-5px);
+  transform: translateY(-5px);
   box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
 }
 .button-viewmore-color{
   background-color: rgba(0, 0, 0, 0.1) !important;
+}
+.button-viewmore-color:hover{
+  transform: translateY(-5px);
+  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
 }
 .category-item:hover{
   transform: translateX(-5px);
@@ -123,10 +126,6 @@ body{
   font-weight: bold;
   border-radius:50px;
 }
-
-
-
-
 
 </style>
 </head>

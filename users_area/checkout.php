@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 <!-- Style.css Link End -->
 
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
@@ -125,11 +126,9 @@ body{
 
 
 
-
-
 </style>
 </head>
-<body>
+<body class="open-sans-font">
 <!-- Navbar Start -->
 <!-- First Part Start -->
 <div class="navbar navbar-expand-lg login-bar">
@@ -142,18 +141,18 @@ body{
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='./users_area/profile.php'>Welcome ".$_SESSION['username']."</a>
+        <a class='nav-link' href='profile.php'>Welcome ".$_SESSION['username']."</a>
       </li>";
         }
      
         if(!isset($_SESSION['username'])){
           echo "<li class='nav-item'>
-        <a class='nav-link' href='./users_area/user_login.php'>Login</a>
+        <a class='nav-link' href='user_login.php'>Login</a>
       </li>";
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='./users_area/logout.php'>Logout</a>
+        <a class='nav-link' href='logout.php'>Logout</a>
       </li>";
         }
 
@@ -169,26 +168,27 @@ body{
 <nav class="navbar navbar-expand-lg nav-custom">
   <div class="container-fluid">
     
-    <a class="navbar-brand" href="index.php"><img src="../assets/images/logo.png" alt="logo" class="logo"></a>
+    <a class="navbar-brand" href="../index.php"><img src="../assets/images/logo.png" alt="logo" class="logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="display_all.php">Products</a>
+          <a class="nav-link" href="../display_all.php">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
+          <a class="nav-link" href="user_registration.php">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
+    
       </ul>
-      <form class="d-flex" role="search" action="search_product.php" method="GET">
+      <form class="d-flex" role="search" action="../search_product.php" method="GET">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
 
         <input class="btn btn-outline-light" type="submit" value="Search" name="search_data_product">
@@ -198,9 +198,6 @@ body{
 </nav>
     </div>
 <!-- Second Part End -->
-  
-
-
 
 <!-- Navbar End -->
 
@@ -210,12 +207,10 @@ body{
 
 <!-- Center Part Start -->
 <!-- Title Part Start -->
-
 <div class="top-bar">
   <h3 class="text-center pt-2 "style="margin-bottom:0"; >PoshuPakhi</h3>
   <p class="text-center pb-2" style="margin-bottom:0; padding-tip:0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
 </div>
-
 <!-- Title Part End -->
 
   <div class="col-md-12">
