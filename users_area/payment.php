@@ -154,7 +154,8 @@ while ($row = mysqli_fetch_array($result)) {
 
         <!-- Confirm Button -->
         <!-- <button class="btn btn-primary w-100 mt-4">Confirm Order TK. 368</button> -->
-        <a href="order.php?user_id=<?php echo $user_id ?>"><button class="btn btn-primary w-100 mt-4">Confirm Order TK. <?php echo "$money";
+         <?php $link_href = "order.php?user_id=$user_id" ?>
+        <a href="<?php echo "$link_href"; ?>"><button class="btn btn-primary w-100 mt-4">Confirm Order TK. <?php echo "$money";
           ?></button></a>
       </div>
     </div>

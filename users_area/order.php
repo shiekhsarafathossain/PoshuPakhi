@@ -16,7 +16,7 @@ $cart_query_price = "SELECT * FROM cart_details WHERE ip_address='$get_ip_addres
 $result_cart_price = mysqli_query($con,$cart_query_price);
 
 $invoice_number = mt_rand();
-$status='pending';
+$status='Pending';
 
 $count_products = mysqli_num_rows($result_cart_price);
 
