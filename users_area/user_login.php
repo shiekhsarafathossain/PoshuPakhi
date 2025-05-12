@@ -24,7 +24,7 @@ include("../functions/common_function.php");
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Style.css Link End -->
 </head>
-<body>
+<body style="overflow-x: hidden !important;">
 
 <div class="container-fluid m-3">
     <h2 class="text-center">User Login</h2>

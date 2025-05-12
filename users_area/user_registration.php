@@ -19,7 +19,7 @@ include("../functions/common_function.php");
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body style="overflow-x: hidden !important;">
 
 <div class="container-fluid m-3">
     <h2 class="text-center">New User Registration</h2>

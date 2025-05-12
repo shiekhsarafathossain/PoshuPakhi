@@ -1,3 +1,10 @@
+<!-- Connect File -->
+<?php
+  include("../Includes/connect.php");
+  include("../functions/common_function.php");
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -212,7 +219,7 @@ body{
                 <a href='insert_product.php' class='nav-link'>Insert Product</a>                
             </li>
             <li class='nav-item category-item'>
-                <a href='#' class='nav-link'>View Products</a>                
+                <a href='index.php?view_products' class='nav-link'>View Products</a>                
             </li>
             <li class='nav-item category-item'>
                 <a href='index.php?insert_category' class='nav-link'>Insert Cateogory</a>                
@@ -255,6 +262,9 @@ body{
             <?php 
                 if(isset($_GET["insert_category"])){
                     include("insert_categories.php");
+                }
+                if(isset($_GET["view_products"])){
+                    include("view_products.php");
                 }
             ?>
             </div>
