@@ -126,6 +126,20 @@ body{
   font-weight: bold;
   border-radius:50px;
 }
+
+.product_image{
+  width: 100px;
+  object-fit: contain;
+}
+
+table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
 </style>
      
 </head>

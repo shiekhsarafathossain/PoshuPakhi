@@ -6,6 +6,10 @@ if(isset($_POST['insert_products'])){
     $product_keywords = $_POST['product_keywords'];
     $product_category = $_POST['product_category'];
     $product_price = $_POST['product_price'];
+    $product_price_buying = $_POST['product_price_buying'];
+    $seller_name = $_POST['seller_name'];
+    $seller_contact = $_POST['seller_contact'];
+    $stock_quantity = $_POST['stock_quantity'];
     $product_status = 'true';
 
     //Accessing images
@@ -33,8 +37,8 @@ if(isset($_POST['insert_products'])){
         move_uploaded_file($temp_image3,"../assets/images/product_images/$product_image3");
 
         //insert query
-        $insert_products = "INSERT INTO `products` (product_title, product_description, product_keywords, category_id, product_image1, product_image2, product_image3, product_price, date, status) VALUES 
-        ('$product_title', '$product_description', '$product_keywords', '$product_category', '$product_image1', '$product_image2', '$product_image3', '$product_price', NOW(), '$product_status')";
+        $insert_products = "INSERT INTO `products` (product_title, product_description, product_keywords, category_id, product_image1, product_image2, product_image3, product_price, product_price_buying, seller_name, seller_contact, stock_quantity, date, status) VALUES 
+        ('$product_title', '$product_description', '$product_keywords', '$product_category', '$product_image1', '$product_image2', '$product_image3', '$product_price', '$product_price_buying','$seller_name', '$seller_contact', '$stock_quantity', NOW(), '$product_status')";
         
         $result_query = mysqli_query($con,$insert_products);
         if($result_query){
@@ -168,6 +172,82 @@ body{
      
 </head>
 <body class="open-sans-font">
+    <!-- Navbar Start -->
+<!-- First Part Start -->
+<div class="navbar navbar-expand-lg login-bar">
+      <ul class="navbar-nav me-auto">
+      <?php
+      if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='#'>Welcome Guest</a>
+      </li>";
+        }
+        else{
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='../users_area/profile.php'>Welcome ".$_SESSION['username']."</a>
+      </li>";
+        }
+     
+        if(!isset($_SESSION['username'])){
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='../users_area/user_login.php'>Login</a>
+      </li>";
+        }
+        else{
+          echo "<li class='nav-item'>
+        <a class='nav-link' href='../users_area/logout.php'>Logout</a>
+      </li>";
+        }
+
+      ?>
+      </ul>
+
+    </div>
+<!-- First Part End -->
+
+<!-- Second Part Start -->
+    <div class="container-fluid p-0">
+        
+<nav class="navbar navbar-expand-lg nav-custom">
+  <div class="container-fluid">
+    
+    <a class="navbar-brand" href="index.php"><img src="../assets/images/logo.png" alt="logo" class="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="display_all.php">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./users_area/user_registration.php">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search" action="search_product.php" method="GET">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
+
+        <input class="btn btn-outline-light" type="submit" value="Search" name="search_data_product">
+      </form>
+    </div>
+  </div>
+</nav>
+    </div>
+<!-- Second Part End -->
+<!-- Navbar End -->
+
+<!-- Center Part Start -->
+
+<!-- Title Part Start -->
+<?php include("../Includes/title_bar.php"); ?>
+<!-- Title Part End -->
+
     <!-- Insert Products Start -->
     <div class="container mt-2">
         <h1 class="text-center">Insert Products</h1>
@@ -237,6 +317,34 @@ body{
             <input type="text" name="product_price" id="product_price" class="form-control" placeholder="Enter product price" autocomplete="off" required="required">
             </div>
             <!-- Product Price End -->
+
+            <!-- Product Buying Price Start -->
+            <div class="form-outline mb-4 w-50 m-auto">
+            <label for="product_price_buying" class="form-label">Product Buying Price</label>
+            <input type="text" name="product_price_buying" id="product_price_buying" class="form-control" placeholder="Enter product price" autocomplete="off" required="required">
+            </div>
+            <!-- Product Buying Price End -->
+
+            <!-- Wholeseller Name Start -->
+            <div class="form-outline mb-4 w-50 m-auto">
+            <label for="seller_name" class="form-label">Wholeseller Name</label>
+            <input type="text" name="seller_name" id="seller_name" class="form-control" placeholder="Enter Wholeseller name" autocomplete="off" required="required">
+            </div>
+            <!-- Wholeseller Name End -->
+
+            <!-- Wholeseller Contact Start -->
+            <div class="form-outline mb-4 w-50 m-auto">
+            <label for="seller_contact" class="form-label">Wholeseller Contact</label>
+            <input type="text" name="seller_contact" id="seller_contact" class="form-control" placeholder="Enter Wholeseller Contact" autocomplete="off" required="required">
+            </div>
+            <!-- Wholeseller Contact End -->
+
+            <!-- Wholeseller stock_quantity Start -->
+            <div class="form-outline mb-4 w-50 m-auto">
+            <label for="stock_quantity" class="form-label">Stock Quantity</label>
+            <input type="text" name="stock_quantity" id="stock_quantity" class="form-control" placeholder="Enter stock quantity" autocomplete="off" required="required">
+            </div>
+            <!-- Wholeseller stock_quantity End -->
 
             <!-- Product Button Start -->
             <div class="form-outline mb-4 w-50 m-auto">

@@ -256,46 +256,31 @@ function view_details(){
         $product_image3 = $row['product_image3'];
         $product_price = $row['product_price'];
 
-       echo "
-       <div style='display: flex !important; flex-wrap: wrap !important; gap: 20px !important; margin: 50px auto !important;'>
-    <div style='flex: 1 !important;'>
-        <div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'>
-  <div class='carousel-indicators'>
-    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
-    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2'></button>
-    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3'></button>
-  </div>
-  <div class='carousel-inner'>
-    <div class='carousel-item active'>
-      <img src='./assets/images/product_images/$product_image1' class='d-block w-100' alt='Product Image 1'>
-    </div>
-    <div class='carousel-item'>
-      <img src='./assets/images/product_images/$product_image2' class='d-block w-100' alt='Product Image 2'>
-    </div>
-    <div class='carousel-item'>
-      <img src='./assets/images/product_images/$product_image3' class='d-block w-100' alt='Product Image 3'>
-    </div>
-  </div>
-  <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev'>
-    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-    <span class='visually-hidden'>Previous</span>
-  </button>
-  <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next'>
-    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-    <span class='visually-hidden'>Next</span>
-  </button>
-</div>
-
-    </div>
-    <div style='flex: 1 !important;'>
-        <h1 style='font-size: 2rem !important; margin-bottom: 15px !important;'>$product_title</h1>
-        <p style='font-size: 1rem !important; line-height: 1.6 !important;'>$product_description.</p>
-        <p style='font-size: 1.5rem !important; font-weight: bold !important;'>Price: $product_price BDT</p>
-        <a  class= 'btn button-addtocart-color' href='index.php?add_to_cart=$product_id'text-decoration: none !important; padding: 10px 20px !important; border-radius: 5px !important; cursor: pointer !important; display: inline-block !important;'>Add to Cart</a>
-    </div>
-</div>
-
-";
+        echo "
+        <div style='display: flex !important; flex-wrap: wrap !important; gap: 20px !important; margin: 50px auto !important;'>
+          <div style='flex: 1 !important;'>
+            <div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'>
+              <div class='carousel-inner'>
+                <div class='carousel-item active'>
+                  <img src='./assets/images/product_images/$product_image1' class='d-block w-50' alt='Product Image 1'>
+                </div>
+                <div class='carousel-item'>
+                  <img src='./assets/images/product_images/$product_image2' class='d-block w-50' alt='Product Image 2'>
+                </div>
+                <div class='carousel-item'>
+                  <img src='./assets/images/product_images/$product_image3' class='d-block w-50' alt='Product Image 3'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style='flex: 1 !important;'>
+            <h1 style='font-size: 2rem !important; margin-bottom: 15px !important;'>$product_title</h1>
+            <p style='font-size: 1rem !important; line-height: 1.6 !important; white-space: normal;'>$product_description</p>
+            <p style='font-size: 1.5rem !important; font-weight: bold !important;'>Price: $product_price BDT</p>
+            <a class='btn button-addtocart-color' href='index.php?add_to_cart=$product_id' style='text-decoration: none !important; padding: 10px 20px !important; border-radius: 5px !important; cursor: pointer !important; display: inline-block !important;'>Add to Cart</a>
+          </div>
+        </div>
+        ";
       }
     }
   }
