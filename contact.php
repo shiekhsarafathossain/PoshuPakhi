@@ -15,6 +15,7 @@
     <!-- Font Awesome Link Start -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
+    <link rel="stylesheet" href="style.css">
     <!-- Custom CSS -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');

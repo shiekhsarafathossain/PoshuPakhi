@@ -16,10 +16,7 @@
 <!-- Font Awesome Link Start -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Font Awesome Link End -->
-
-<!-- Style.css Link Start -->
-<link rel="stylesheet" href="../assets/css/style.css">
-<!-- Style.css Link End -->
+<link rel="stylesheet" href="style.css">
 
 
 <style>
@@ -202,14 +199,11 @@ body{
 <!-- Navbar End -->
 
 
-
-
-
 <!-- Center Part Start -->
 <!-- Title Part Start -->
 <div class="top-bar">
-  <h3 class="text-center pt-2 "style="margin-bottom:0"; >PoshuPakhi</h3>
-  <p class="text-center pb-2" style="margin-bottom:0; padding-tip:0;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
+  <h3 class="text-center pt-2 mb-0">PoshuPakhi</h3>
+  <p class="text-center pb-2 mb-0 pt-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
 </div>
 <!-- Title Part End -->
 
@@ -219,11 +213,11 @@ body{
         <?php
         
         if(!isset($_SESSION['username'])){
-            include('user_login.php');
+            include('./user_login.php');
 
         }
         else{
-            include('payment.php');
+            include('./payment.php');
         }
         
         ?>
@@ -238,7 +232,7 @@ body{
 
 <!-- Footer Start -->
 <?php
-  include("../includes/footer.php");
+  include("../Includes/footer.php");
 ?>
 <!-- Footer End -->
     

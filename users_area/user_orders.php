@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order History</title>
     <link rel="stylesheet" href="path/to/bootstrap.min.css"> <!-- Optional: For proper table styling -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
