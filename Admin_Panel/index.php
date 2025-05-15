@@ -199,7 +199,7 @@ table, th, td {
           <a class="nav-link" href="./users_area/user_registration.php">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="../contact.php">Contact</a>
         </li>
       </ul>
       <form class="d-flex" role="search" action="search_product.php" method="GET">
@@ -279,6 +279,12 @@ table, th, td {
                 }
                 if(isset($_GET["view_products"])){
                     include("view_products.php");
+                }
+                if(isset($_GET["edit_products"])){
+                    include("edit_products.php");
+                }
+                if(isset($_GET["delete_products"])){
+                    include("delete_products.php");
                 }
             ?>
             </div>
