@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+
+
+.open-sans-font {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.logo{
+  width:100px;
+}
+
+/* card style start */
+.card-img-top{
+  height: 200px;
+}
+
+.title-fixed {
+  height: 1.5em; /* fits 1-2 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.description-fixed {
+  height: 4em; /* fits around 4-5 lines */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.price{
+  font-size: large;
+  font-weight: bolder;
+}
+
+/* card style end */
+
+.nav-custom{
+  background-color: green;
+}
+/* dfgdfd */
+
+/* cart.php start */
+.cart_img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+
+}
+/* cart.php end */
+
+.top-bar{
+  background-color: blue !important;
+}
+
+
+
+.footer-custom{
+  background-color: red !important;
+}
+.category-item{
+  background-color: seagreen;
+  /* margin: 5px;
+  border-radius: 5px; */
+}
+.category-item:hover{
+  transform: translateX(-5px);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.side-bar{
+  height: 100%;
+  background-color: palevioletred;
+}
+
+.category-title{
+  background-color: red !important;
+  /* border-top-right-radius: 6px; */
+  font-size: large;
+  font-weight: bold;
+  
+
+}
+
+
+
+
