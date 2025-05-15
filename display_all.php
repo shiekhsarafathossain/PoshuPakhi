@@ -215,27 +215,32 @@ body {
   </div>
 
   <div class="col-md-9 pt-3 m-auto">
-    <!-- Product Start -->
-    <div class="row">
-    
-    <!-- Php Code -->
-
-    <?php
-    
-    //calling function getProducts()
-    getAllProducts();
-
-    //calling function getProducts()
-    getProductsbByCategories();
-
-    // $ip = getIPAddress();  
-    // echo 'User Real IP Address - '.$ip;  
-
-    ?>
-
-    </div>
-    <!-- Product End -->
+  <!-- Sorting dropdown start -->
+  <div class="d-flex justify-content-end mb-3">
+    <form method="GET" id="sortForm">
+      <select name="sort" class="form-select w-auto" onchange="document.getElementById('sortForm').submit()">
+        <option value="" disabled <?= !isset($_GET['sort']) ? 'selected' : '' ?>>Sort by</option>
+        <option value="price_asc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'price_asc') ? 'selected' : '' ?>>Price: Low to High</option>
+        <option value="price_desc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'price_desc') ? 'selected' : '' ?>>Price: High to Low</option>
+        <option value="name_asc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'name_asc') ? 'selected' : '' ?>>Name: A to Z</option>
+        <option value="name_desc" <?= (isset($_GET['sort']) && $_GET['sort'] == 'name_desc') ? 'selected' : '' ?>>Name: Z to A</option>
+      </select>
+    </form>
   </div>
+  <!-- Sorting dropdown end -->
+
+  <!-- Product Start -->
+  <div class="row">
+    <?php
+    // Pass the sort parameter to your functions
+    $sort = isset($_GET['sort']) ? $_GET['sort'] : '';
+
+    getAllProducts($sort);
+    getProductsbByCategories($sort);
+    ?>
+  </div>
+  <!-- Product End -->
+</div>
 
 </div>
 <!-- Center Part End -->

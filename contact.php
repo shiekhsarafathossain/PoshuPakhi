@@ -206,6 +206,14 @@ body {
 
 /* card style end */
 
+.team-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #dee2e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 </style>
 </head>
 <body class="open-sans-font">
@@ -221,13 +229,14 @@ body {
         <!-- Team Member 1 -->
         <div class="col-sm-6 col-md-3">
             <div class="card team-card p-4 text-center border-0 shadow-sm rounded-4">
+                <img src="./assets/images/team_images/sarafat.jpg" class="team-img rounded-circle mb-3" alt="Sheikh Sarafat Hossain">
                 <h5 class="fw-semibold mb-2">Sheikh Sarafat Hossain</h5>
                 <p class="text-primary fw-semibold mb-2">CEO</p>
                 <p class="icon-text mb-1">
-                    <i class="fa-solid fa-envelope text-secondary"></i> sheikhsarafathossain@gmail.com
+                    <i class="fa-solid fa-envelope text-secondary"></i> ceo@poshupakhi.com
                 </p>
                 <p class="icon-text">
-                    <i class="fa-solid fa-phone text-secondary"></i> 01627400607
+                    <i class="fa-solid fa-phone text-secondary"></i> +880 1923400407
                 </p>
                 <p class="bio-text">Leading the team with passion and vision, dedicated to innovation and growth.</p>
             </div>
@@ -236,13 +245,14 @@ body {
         <!-- Team Member 2 -->
         <div class="col-sm-6 col-md-3">
             <div class="card team-card p-4 text-center border-0 shadow-sm rounded-4">
+                <img src="./assets/images/team_images/raya.jpeg" class="team-img rounded-circle mb-3" alt="Rijia Parveen Raya">
                 <h5 class="fw-semibold mb-2">Rijia Parveen Raya</h5>
                 <p class="text-primary fw-semibold mb-2">CMO</p>
                 <p class="icon-text mb-1">
-                    <i class="fa-solid fa-envelope text-secondary"></i> raya@gmail.com
+                    <i class="fa-solid fa-envelope text-secondary"></i> cmo@poshupakhi.com
                 </p>
                 <p class="icon-text">
-                    <i class="fa-solid fa-phone text-secondary"></i> 01937430623
+                    <i class="fa-solid fa-phone text-secondary"></i> +880 1937430623
                 </p>
                 <p class="bio-text">Marketing expert driving customer engagement and brand growth with creative strategies.</p>
             </div>
@@ -251,28 +261,30 @@ body {
         <!-- Team Member 3 -->
         <div class="col-sm-6 col-md-3">
             <div class="card team-card p-4 text-center border-0 shadow-sm rounded-4">
-                <h5 class="fw-semibold mb-2">Nipa</h5>
-                <p class="text-primary fw-semibold mb-2">CTO</p>
+                <img src="./assets/images/team_images/nipa.jpg" class="team-img rounded-circle mb-3" alt="Nipa Mridha">
+                <h5 class="fw-semibold mb-2">Nipa Mridha</h5>
+                <p class="text-primary fw-semibold mb-2">CFO</p>
                 <p class="icon-text mb-1">
-                    <i class="fa-solid fa-envelope text-secondary"></i> nipa@gmail.com
+                    <i class="fa-solid fa-envelope text-secondary"></i> cfo@poshupakhi.com
                 </p>
                 <p class="icon-text">
-                    <i class="fa-solid fa-phone text-secondary"></i> 01122400607
+                    <i class="fa-solid fa-phone text-secondary"></i> +880 1422400607
                 </p>
-                <p class="bio-text">Tech enthusiast ensuring seamless system integration and innovation.</p>
+                <p class="bio-text">Focused on financial excellence and sustainable growth management.</p>
             </div>
         </div>
 
         <!-- Team Member 4 -->
         <div class="col-sm-6 col-md-3">
             <div class="card team-card p-4 text-center border-0 shadow-sm rounded-4">
-                <h5 class="fw-semibold mb-2">Shibli</h5>
+                <img src="./assets/images/team_images/shibly.jpg" class="team-img rounded-circle mb-3" alt="Jubaiya Akter Shibly">
+                <h5 class="fw-semibold mb-2">Jubaiya Akter Shibly</h5>
                 <p class="text-primary fw-semibold mb-2">CTO</p>
                 <p class="icon-text mb-1">
-                    <i class="fa-solid fa-envelope text-secondary"></i> shibli@gmail.com
+                    <i class="fa-solid fa-envelope text-secondary"></i> cto@poshupakhi.com
                 </p>
                 <p class="icon-text">
-                    <i class="fa-solid fa-phone text-secondary"></i> 01997400107
+                    <i class="fa-solid fa-phone text-secondary"></i> +880 1997400107
                 </p>
                 <p class="bio-text">Focused on technical excellence and robust infrastructure management.</p>
             </div>

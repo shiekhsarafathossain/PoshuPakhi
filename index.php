@@ -189,6 +189,8 @@ body {
 
 <!-- Title Part End -->
 
+
+
 <!-- calling cart function start -->
 <?php
   cart();
@@ -215,9 +217,15 @@ body {
   </div>
 
   <div class="col-md-9 pt-3 m-auto">
+    
     <!-- Product Start -->
     <div class="row">
-    
+    <div class="container my-4">
+  <div class="p-4 rounded text-center text-white" style="background: linear-gradient(135deg, #5A8DFF 0%, #C4D9FF 100%);">
+    <h2>🔥 Summer Sale: Up to 30% Off on All Pet Supplies! 🔥</h2>
+    <p>Hurry up! Offer valid till end of the month.</p>
+  </div>
+</div>
     <!-- Php Code -->
 
     <?php
