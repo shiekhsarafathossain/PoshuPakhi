@@ -1,9 +1,9 @@
 <?php
+@session_start(); // Start the session
 include("../Includes/connect.php");
 include("../functions/common_function.php");
 
-@session_start(); // Start the session
-$user_shipping_address = ''; // Initialize to avoid undefined variable warning
+$user_shipping_address = ''; // Initialize
 
 // Get user from session
 if (isset($_SESSION['username'])) {
@@ -17,7 +17,7 @@ if (isset($_SESSION['username'])) {
         $username = $row_fetch['username'];
         $user_shipping_address = $row_fetch['user_shipping_address'];
 
-        // Handle form submission
+        // Update shipping address
         if (isset($_POST['user_update'])) {
             $user_shipping_address = $_POST['user_shipping_address'];
             $update_data = "UPDATE user_table SET user_shipping_address='$user_shipping_address' WHERE user_id=$user_id";
@@ -36,7 +36,13 @@ $cart_query = "SELECT * FROM cart_details WHERE ip_address='$user_ip'";
 $result = mysqli_query($con, $cart_query);
 
 $total_price = 0;
-$delivery = 60;
+
+// ✅ Determine delivery charge based on address
+if (stripos($user_shipping_address, 'Dhaka') !== false) {
+    $delivery = 60;
+} else {
+    $delivery = 120;
+}
 
 if (mysqli_num_rows($result) == 0) {
     $money = 0;
@@ -61,6 +67,7 @@ if (mysqli_num_rows($result) == 0) {
 
 $money = round($total_price + $delivery);
 $link_href = "order.php?user_id=$user_id";
+
 ?>
 
 <!DOCTYPE html>

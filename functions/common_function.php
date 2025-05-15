@@ -257,30 +257,40 @@ function view_details(){
         $product_price = $row['product_price'];
 
         echo "
-        <div style='display: flex !important; flex-wrap: wrap !important; gap: 20px !important; margin: 50px auto !important;'>
-          <div style='flex: 1 !important;'>
-            <div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'>
-              <div class='carousel-inner'>
-                <div class='carousel-item active'>
-                  <img src='./assets/images/product_images/$product_image1' class='d-block w-50' alt='Product Image 1'>
-                </div>
-                <div class='carousel-item'>
-                  <img src='./assets/images/product_images/$product_image2' class='d-block w-50' alt='Product Image 2'>
-                </div>
-                <div class='carousel-item'>
-                  <img src='./assets/images/product_images/$product_image3' class='d-block w-50' alt='Product Image 3'>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style='flex: 1 !important;'>
-            <h1 style='font-size: 2rem !important; margin-bottom: 15px !important;'>$product_title</h1>
-            <p style='font-size: 1rem !important; line-height: 1.6 !important; white-space: normal;'>$product_description</p>
-            <p style='font-size: 1.5rem !important; font-weight: bold !important;'>Price: $product_price BDT</p>
-            <a class='btn button-addtocart-color' href='index.php?add_to_cart=$product_id' style='text-decoration: none !important; padding: 10px 20px !important; border-radius: 5px !important; cursor: pointer !important; display: inline-block !important;'>Add to Cart</a>
-          </div>
+<div style='display: flex !important; flex-wrap: wrap !important; gap: 20px !important; margin: 50px auto !important; max-width: 800px;'>
+  <div style='flex: 1 1 30% !important; display: flex; justify-content: center; align-items: center;'>
+    <div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel' style='width: 100%;'>
+      <div class='carousel-inner'>
+        <div class='carousel-item active'>
+          <img src='./assets/images/product_images/$product_image1' style='width: 100%; height: 250px; object-fit: contain;' alt='Product Image 1'>
         </div>
-        ";
+        <div class='carousel-item'>
+          <img src='./assets/images/product_images/$product_image2' style='width: 100%; height: 250px; object-fit: contain;' alt='Product Image 2'>
+        </div>
+        <div class='carousel-item'>
+          <img src='./assets/images/product_images/$product_image3' style='width: 100%; height: 250px; object-fit: contain;' alt='Product Image 3'>
+        </div>
+      </div>
+      <!-- Carousel Controls (Black Arrows) -->
+      <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev' style='filter: invert(0);'>
+        <span class='carousel-control-prev-icon' aria-hidden='true' style='background-color: black; padding: 10px; border-radius: 50%;'></span>
+        <span class='visually-hidden'>Previous</span>
+      </button>
+      <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next' style='filter: invert(0);'>
+        <span class='carousel-control-next-icon' aria-hidden='true' style='background-color: black; padding: 10px; border-radius: 50%;'></span>
+        <span class='visually-hidden'>Next</span>
+      </button>
+    </div>
+  </div>
+  <div style='flex: 1 1 65% !important; padding-left: 20px;'>
+    <h1 style='font-size: 2rem !important; margin-bottom: 15px !important;'>$product_title</h1>
+    <p style='font-size: 1rem !important; line-height: 1.6 !important; white-space: normal;'>$product_description</p>
+    <p style='font-size: 1.5rem !important; font-weight: bold !important;'>Price: $product_price BDT</p>
+    <a class='btn button-addtocart-color' href='index.php?add_to_cart=$product_id' style='text-decoration: none !important; padding: 10px 20px !important; border-radius: 5px !important; cursor: pointer !important; display: inline-block !important;'>Add to Cart</a>
+  </div>
+</div>
+";
+
       }
     }
   }
