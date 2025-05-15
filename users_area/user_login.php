@@ -17,9 +17,10 @@ include("../functions/common_function.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
     <link rel="stylesheet" href="./style.css">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
+ <style>
+/* font start */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
 .open-sans-font {
   font-family: "Open Sans", sans-serif;
@@ -30,13 +31,123 @@ include("../functions/common_function.php");
     "wdth" 100;
 }
 
+/* font end */
+
+body {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F0F4FF 100%) !important;
+  margin: 0;
+  padding: 0;
+}
+
 .logo{
-  width:100px;
+  width:70px;
 }
 
 /* card style start */
 .card-img-top{
   height: 200px;
+}
+
+.top-bar {
+    text-align: center !important;
+    background: linear-gradient(135deg, #C4D9FF 0%, #5A8DFF 100%) !important;
+    
+}
+
+
+/* card style end */
+
+.nav-custom{
+  background: linear-gradient(135deg, #C5BAFF 0%, #8A77FF 100%) !important;
+}
+
+
+/* cart.php start */
+.cart_img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+/* cart.php end */
+
+.footer-custom{
+  background: linear-gradient(135deg, #C5BAFF 0%, #8A77FF 100%) !important;
+}
+
+/* button start */
+.button-addtocart-color {
+  background: linear-gradient(135deg, #C4D9FF, #91B9FF) !important;
+  font-weight: bold;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-addtocart-color:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.button-viewmore-color {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-viewmore-color:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* button end */
+
+/* sidebar start */
+
+.side-bar{
+  height: 100%;
+  background: linear-gradient(135deg, #E8F9FF 10%, #A0D8FF 100%) !important;
+}
+.category-title{
+  background: linear-gradient(135deg, #E8F9FF 10%, #A0D8FF 100%) !important;
+  font-size: large;
+  font-weight: bold;
+
+}
+.category-item {
+  background: linear-gradient(135deg, #E8F9FF 10%, #A0D8FF 100%) !important;
+  margin: 5px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.category-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #C4D9FF 10%, #91B9FF 100%) !important;
+  transition: all 0.3s ease;
+}
+
+/* sidebar end */
+
+
+/* card style start*/
+.card {
+  background: #ffffffcc; /* white with slight transparency */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px); /* soft blur behind card for depth */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
 }
 
 .title-fixed {
@@ -59,69 +170,6 @@ include("../functions/common_function.php");
 
 /* card style end */
 
-.nav-custom{
-  background-color: #C5BAFF !important;
-}
-/* dfgdfd */
-
-/* cart.php start */
-.cart_img {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-}
-/* cart.php end */
-
-.top-bar{
-  background-color: #C4D9FF !important;
-}
-
-body{
-   background-color: white !important;
-}
-
-.footer-custom{
-  background-color: #C5BAFF !important;
-}
-.category-item{
-  background-color: #E8F9FF !important;
-  margin: 5px;
-  border-radius: 5px; 
-}
-.button-addtocart-color{
-    background-color: #C4D9FF !important;
-    font-weight: bold;
-}
-.button-addtocart-color:hover{
-  transform: translateY(-5px);
-  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
-}
-.button-viewmore-color{
-  background-color: rgba(0, 0, 0, 0.1) !important;
-}
-.button-viewmore-color:hover{
-  transform: translateY(-5px);
-  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
-}
-.category-item:hover{
-  transform: translateX(-5px);
-  box-shadow: 20 20px 20px rgba(0, 0, 0, 0.1);
-  background-color: #C4D9FF !important;
-
-}
-
-
-.side-bar{
-  height: 100%;
-  background-color: #E8F9FF !important;
-}
-
-.category-title{
-  background-color: #E8F9FF !important;
-  font-size: large;
-  font-weight: bold;
-  border-radius:50px;
-}
 </style>
 </head>
 <body style="overflow-x: hidden !important;">

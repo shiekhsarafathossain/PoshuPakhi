@@ -53,12 +53,6 @@
             transform: scale(1.1);
         }
 
-        .hero {
-            padding: 50px 0;
-            text-align: center;
-            color: #000;
-        }
-
         .btn {
             border-radius: 12px;
             font-size: 18px;
@@ -105,12 +99,7 @@
   </div>
 </nav>
 
-<!-- Hero Section -->
-<div class="hero">
-  <h1>Welcome to PoshuPakhi</h1>
-  <p>Premium pet accessories with an Apple-like design experience.</p>
-  <button class="btn">Explore Now</button>
-</div>
+
 
 <!-- Product Section -->
 <div class="container mt-5">
