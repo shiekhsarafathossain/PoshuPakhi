@@ -97,6 +97,7 @@ if (isset($_POST['user_register'])) {
     $user_address = $_POST['user_address'];
     $user_contact = $_POST['user_contact'];
     $user_ip = getIPAddress();
+    $user_shipping_address = $user_address;
 
     // Check if passwords not match
     if ($user_password !== $confirm_user_password) {
@@ -122,8 +123,8 @@ if (isset($_POST['user_register'])) {
     }
     else{
     // Insert query
-    $insert_query = "INSERT INTO user_table (username, user_email, user_password, user_image, user_ip, user_address, user_mobile) 
-    VALUES ('$user_username', '$user_email', '$hash_password', '$user_image', '$user_ip', '$user_address', '$user_contact')";
+    $insert_query = "INSERT INTO user_table (username, user_email, user_password, user_image, user_ip, user_address, shipping_address, user_mobile) 
+    VALUES ('$user_username', '$user_email', '$hash_password', '$user_image', '$user_ip', '$user_address', '$user_shipping_address', '$user_contact')";
 
     $sql_execute = mysqli_query($con, $insert_query);
 

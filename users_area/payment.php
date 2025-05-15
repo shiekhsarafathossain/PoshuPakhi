@@ -1,76 +1,91 @@
 <?php
 include("../Includes/connect.php");
 include("../functions/common_function.php");
-?>
 
-<?php
-$user_ip =getIPAddress();
-$get_user = "SELECT * FROM user_table WHERE user_ip='$user_ip'";
-$result = mysqli_query($con,$get_user);
+@session_start(); // Start the session
+$user_shipping_address = ''; // Initialize to avoid undefined variable warning
 
-$run_query = mysqli_fetch_array($result);
-$user_id = $run_query['user_id'];
+// Get user from session
+if (isset($_SESSION['username'])) {
+    $user_session_name = $_SESSION['username'];
+    $select_query = "SELECT * FROM user_table WHERE username='$user_session_name'";
+    $result_query = mysqli_query($con, $select_query);
 
-global $con;
-$get_ip_address = getIPAddress();
-$total_price = 0;
+    if ($result_query && mysqli_num_rows($result_query) > 0) {
+        $row_fetch = mysqli_fetch_assoc($result_query);
+        $user_id = $row_fetch['user_id'];
+        $username = $row_fetch['username'];
+        $user_shipping_address = $row_fetch['user_shipping_address'];
 
-$cart_query = "SELECT * FROM cart_details WHERE ip_address='$get_ip_address'";
+        // Handle form submission
+        if (isset($_POST['user_update'])) {
+            $user_shipping_address = $_POST['user_shipping_address'];
+            $update_data = "UPDATE user_table SET user_shipping_address='$user_shipping_address' WHERE user_id=$user_id";
+            $result_query_update = mysqli_query($con, $update_data);
+
+            if ($result_query_update) {
+                echo "<script>alert('Shipping address updated successfully');</script>";
+            }
+        }
+    }
+}
+
+// Calculate cart total
+$user_ip = getIPAddress();
+$cart_query = "SELECT * FROM cart_details WHERE ip_address='$user_ip'";
 $result = mysqli_query($con, $cart_query);
-$delivery=60;
+
+$total_price = 0;
+$delivery = 60;
 
 if (mysqli_num_rows($result) == 0) {
-  $money=0;
-  $delivery=0;
-  echo "<script>alert('add product to cart')</script>";
-  echo "<script>window.open('../display_all.php','_self')</script>";
-  }
+    $money = 0;
+    $delivery = 0;
+    echo "<script>alert('Add product to cart');</script>";
+    echo "<script>window.open('../display_all.php','_self');</script>";
+} else {
+    while ($row = mysqli_fetch_array($result)) {
+        $product_id = $row['product_id'];
+        $quantity = $row['quantity'];
 
-while ($row = mysqli_fetch_array($result)) {
-  $product_id = $row['product_id'];
-  $quantity = $row['quantity'];
+        $product_query = "SELECT * FROM products WHERE product_id = '$product_id'";
+        $product_result = mysqli_query($con, $product_query);
 
-  $product_query = "SELECT * FROM products WHERE product_id = '$product_id'";
-  $product_result = mysqli_query($con, $product_query);
-
-  while ($product = mysqli_fetch_array($product_result)) {
-  $title = $product['product_title'];
-  $image = $product['product_image1'];
-  $price = $product['product_price'];
-  $sub_total = $price * $quantity;
-  $total_price += $sub_total;
-
+        while ($product = mysqli_fetch_array($product_result)) {
+            $price = $product['product_price'];
+            $sub_total = $price * $quantity;
+            $total_price += $sub_total;
+        }
     }
-  }
+}
+
+$money = round($total_price + $delivery);
+$link_href = "order.php?user_id=$user_id";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment</title>
-    
-    <!-- Bootstrap CSS Link Start -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Bootstrap CSS Link End -->
-
-    <!-- Font Awesome Link Start -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Font Awesome Link End -->
-
-    <!-- Style.css Link Start -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <!-- Style.css Link End -->
+    <title>Shipping Address</title>
 </head>
-<body>
+<body class="open-sans-font">
+    <h3 class="text-center text-success mb-4 fw-bold">Shipping Address</h3>
+    <form action="" method="post" enctype="multipart/form-data" class="text-center">
+        <div class="form-outline mb-4">
+            <input type="text" class="form-control w-50 m-auto" value="<?php echo $user_shipping_address ?>" name="user_shipping_address">
+        </div>
+        <div class="form-outline mb-4">
+            <input type="submit" value="Update" class="btn button-addtocart-color" name="user_update">
+        </div>
+    </form>
 
 <div class="col-md-9 m-auto my-4">
   <div class="row mx-0">
-    
     <!-- Left: Payment Method -->
     <div class="col-md-7">
       <h4>Payment Method <small class="text-muted">(Please select a payment method)</small></h4>
-      
       <!-- Cash on Delivery -->
       <div class="form-check my-3">
         <input class="form-check-input" type="radio" name="paymentMethod" id="cod">
@@ -108,7 +123,6 @@ while ($row = mysqli_fetch_array($result)) {
         <input class="form-check-input" type="radio" name="paymentMethod" id="card">
         <label class="form-check-label" for="card">
           <img src="../assets/images/atm_card.png" alt="Visa Mastercard Amex" style="height: 30px;">
-
         </label>
       </div>
 
@@ -128,48 +142,27 @@ while ($row = mysqli_fetch_array($result)) {
         <hr>
         <div class="d-flex justify-content-between">
           <span>Subtotal</span>
-          <span>TK. <?php echo"$total_price" ?></span>
+          <span>TK. <?php echo $total_price; ?></span>
         </div>
         <div class="d-flex justify-content-between">
           <span>Delivery Charge</span>
-          <span>TK. <?php echo"$delivery" ?></span>
+          <span>TK. <?php echo $delivery; ?></span>
         </div>
         <hr>
         <div class="d-flex justify-content-between fw-bold">
           <span>Total</span>
-          <span>TK. <?php $money=round($total_price+$delivery);
-          echo "$money";
-          ?></span>
+          <span>TK. <?php echo $money; ?></span>
         </div>
 
-        <!-- Voucher
-        <div class="mt-3">
-          <label for="voucher" class="form-label">Apply Voucher or Promo Code</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="voucher" placeholder="Enter your code here">
-            <button class="btn btn-primary">Apply</button>
-          </div>
-          <div class="text-success mt-1">You are saving 80 TK</div>
-        </div> -->
-
         <!-- Confirm Button -->
-        <!-- <button class="btn btn-primary w-100 mt-4">Confirm Order TK. 368</button> -->
-         <?php $link_href = "order.php?user_id=$user_id" ?>
-        <a href="<?php echo "$link_href"; ?>"><button class="btn btn-primary w-100 mt-4">Confirm Order TK. <?php echo "$money";
-          ?></button></a>
+        <a href="<?php echo $link_href; ?>">
+            <button class="btn btn-primary w-100 mt-4">Confirm Order TK. <?php echo $money; ?></button>
+        </a>
       </div>
     </div>
-    
   </div>
 </div>
 
-<!-- Center Part End -->
-
-
-
-    
-<!-- Bootstrap JS Link Start -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<!-- Bootstrap JS Link End -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
