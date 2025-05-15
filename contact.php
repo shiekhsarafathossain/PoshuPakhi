@@ -1,29 +1,24 @@
 <!-- Connect File -->
 <?php
-  include("Includes/connect.php");
-  include("functions/common_function.php");
-  session_start();
+  include("./Includes/connect.php");
+  include("./functions/common_function.php");
+  @session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoshuPakhi</title>
+    <title>Contact</title>
     <!-- Bootstrap CSS Link Start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome Link Start -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     <!-- Custom CSS -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
-
-        body {
-            font-family: "Open Sans", sans-serif;
-            background-color: white !important;
-        }
 
         .team-card {
             background: #f7f9fc;
@@ -164,7 +159,7 @@ body{
 }
     </style>
 </head>
-<body>
+<body class="open-sans-font">
 
 <!-- Navbar Start -->
 <?php include("./Includes/navbar.php"); ?>

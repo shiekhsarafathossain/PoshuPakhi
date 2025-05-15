@@ -16,7 +16,7 @@ include("../functions/common_function.php");
     <!-- Font Awesome Link Start -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 

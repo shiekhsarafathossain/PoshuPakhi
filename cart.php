@@ -1,8 +1,8 @@
 <!-- Connect File -->
 <?php
-  include("Includes/connect.php");
-  include("functions/common_function.php");
-  @session_start();
+  include("./Includes/connect.php");
+  include("./functions/common_function.php");
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
@@ -125,7 +125,7 @@ body{
 </head>
 <body class="open-sans-font">
 <!-- Navbar Start -->
-<?php include("Includes/navbar.php"); ?>
+<?php include("./Includes/navbar.php"); ?>
 <!-- Navbar End -->
 
 <!-- calling cart -->
@@ -133,7 +133,7 @@ body{
 
 
 <!-- Title Section -->
-<?php include("Includes/title_bar.php"); ?>
+<?php include("./Includes/title_bar.php"); ?>
 <!-- Main Content -->
 
 
@@ -236,7 +236,7 @@ body{
                 mysqli_query($con, $update_query);
               }
             }
-            echo "<script>window.location.href='cart.php';</script>";
+            echo "<script>window.location.href='./cart.php';</script>";
           }
 
           if (isset($_POST['remove_cart']) && isset($_POST['removeitem'])) {
@@ -244,7 +244,7 @@ body{
               $delete_query = "DELETE FROM cart_details WHERE product_id=$remove_id AND ip_address='$get_ip_address'";
               mysqli_query($con, $delete_query);
             }
-            echo "<script>window.location.href='cart.php';</script>";
+            echo "<script>window.location.href='./cart.php';</script>";
           }
           ?>
         </div>
@@ -257,7 +257,7 @@ body{
 </div>
 
 <!-- Footer Start -->
-<?php include("includes/footer.php"); ?>
+<?php include("./Includes/footer.php"); ?>
 <!-- Footer End -->
 
 <!-- Bootstrap JS -->
