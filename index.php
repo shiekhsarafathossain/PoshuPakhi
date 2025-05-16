@@ -203,7 +203,7 @@ body {
   <div class="col-md-2 p-0 text-center">
     <!-- SideBar Start-->
     <ul class="navbar-nav me-auto side-bar">
-      <li class="nav-item category-title pt-2">
+      <li class="nav-item pt-2">
         <h3 class="fw-bold">Category</h3>
       </li>
     
