@@ -69,11 +69,11 @@
 
 /* font end */
 
-body {
+/* body {
   background: linear-gradient(135deg, #FFFFFF 0%, #F0F4FF 100%) !important;
   margin: 0;
   padding: 0;
-}
+} */
 
 .logo{
   width:70px;

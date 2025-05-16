@@ -33,12 +33,12 @@
 }
 
 /* font end */
-
+/* 
 body {
   background: linear-gradient(135deg, #FFFFFF 0%, #F0F4FF 100%) !important;
   margin: 0;
   padding: 0;
-}
+} */
 
 .logo{
   width:70px;
@@ -251,8 +251,8 @@ body {
 <!-- Center Part Start -->
 <!-- Title Part Start -->
 <div class="top-bar">
-  <h3 class="text-center pt-2 mb-0">PoshuPakhi</h3>
-  <p class="text-center pb-2 mb-0 pt-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, molestiae ad optio ratione magni dicta.</p>
+  <h3 class="text-center pt-2 mb-0">Welcome to PoshuPakhi</h3>
+  <p class="text-center pb-2 mb-0 pt-0">Everything for Your Pets & Birds.</p>
 </div>
 <!-- Title Part End -->
 
