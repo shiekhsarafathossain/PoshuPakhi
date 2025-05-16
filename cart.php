@@ -260,7 +260,7 @@ body {
 
             <!-- Buttons & Subtotal -->
             <div class="d-flex justify-content-between mb-4">
-              <h4>Subtotal: <strong class="text-info"><?php echo $total_price; ?>/-</strong></h4>
+              <h4>Subtotal: <strong class="text-info"><?php echo $total_price; ?> /- BDT</strong></h4>
               <div>
                 <input type="submit" value="Update Cart" class="btn btn-dark text-white mx-2" name="update_cart">
                 <input type="submit" value="Remove Selected" class="btn btn-danger text-white mx-2" name="remove_cart">

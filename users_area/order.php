@@ -50,11 +50,11 @@ if ($quantity == 0 || $quantity == 1) {
 } else {
     $subtotal = $total_price * $quantity;
 }
-
+$date_after_3_days = date('Y-m-d H:i:s', strtotime('+3 days'));
 // Insert into user_orders (now including shipping address)
 $insert_orders = "INSERT INTO user_orders 
-(user_id, amount_due, invoice_number, total_products, order_date, order_status, user_shipping_address) 
-VALUES ($user_id, $subtotal, $invoice_number, $count_products, NOW(), '$status', '$shipping_address')";
+(user_id, amount_due, invoice_number, total_products, order_date, estimated_delivery, order_status, user_shipping_address) 
+VALUES ($user_id, $subtotal, $invoice_number, $count_products, NOW(),'$date_after_3_days', '$status', '$shipping_address')";
 
 $result_query = mysqli_query($con, $insert_orders);
 

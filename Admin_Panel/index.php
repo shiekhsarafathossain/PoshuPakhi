@@ -262,7 +262,7 @@ table, th, td {
                 <a href='index.php?insert_category' class='nav-link'>Insert Cateogory</a>                
             </li>
             <li class='nav-item category-item'>
-                <a href='#' class='nav-link'>View Categories</a>                
+                <a href='./index.php?view_categories' class='nav-link'>View Categories</a>                
             </li>
             <li class='nav-item category-item'>
                 <a href='#' class='nav-link'>View Order List</a>                
@@ -306,6 +306,17 @@ table, th, td {
                 if(isset($_GET["delete_products"])){
                     include("delete_products.php");
                 }
+                if(isset($_GET["view_categories"])){
+                    include("view_categories.php");
+                }
+                if(isset($_GET["edit_category"])){
+                    include("edit_category.php");
+                }
+                if(isset($_GET["delete_category"])){
+                    include("delete_category.php");
+                }
+
+                
             ?>
             </div>
         </div>

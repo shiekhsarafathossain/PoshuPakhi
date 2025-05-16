@@ -28,7 +28,8 @@
                 <th>Amount Due</th>
                 <th>Total Products</th>
                 <th>Invoice Number</th>
-                <th>Date</th>
+                <th>Order Date</th>
+                <th>Estimated Delivery</th>
                 <th>Shipping Address</th>
                 <th>Complete/Incomplete</th>
                 <th>Status</th>
@@ -45,7 +46,9 @@
                 $amount_due = $row_orders['amount_due'];
                 $total_products = $row_orders['total_products'];
                 $invoice_number = $row_orders['invoice_number'];
-                $order_date = $row_orders['order_date'];
+                // Format date using PHP date function
+                $order_date = date('Y-m-d', strtotime($row_orders['order_date']));
+                $estimated_delivery = date('Y-m-d', strtotime($row_orders['estimated_delivery']));
                 $shipping_address = $row_orders['user_shipping_address'];
                 $order_status = $row_orders['order_status'];
                 $order_completed = ($order_status == 'Complete') ? 'Complete' : 'Incomplete';
@@ -57,6 +60,7 @@
                     <td>$total_products</td>
                     <td>$invoice_number</td>
                     <td>$order_date</td>
+                    <td>$estimated_delivery</td>
                     <td>$shipping_address</td>
                     <td>$order_completed</td>
                     <td>$order_status</td>
