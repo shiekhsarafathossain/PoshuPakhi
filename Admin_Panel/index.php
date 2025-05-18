@@ -268,7 +268,7 @@ table, th, td {
                 <a href='./index.php?list_orders' class='nav-link'>View Order List</a>                
             </li>
             <li class='nav-item category-item'>
-                <a href='#' class='nav-link'>View Payment List</a>                
+                <a href='./index.php?list_payments' class='nav-link'>View Payment List</a>                
             </li>
             <li class='nav-item category-item'>
                 <a href='#' class='nav-link'>View User List</a>                
@@ -324,7 +324,11 @@ table, th, td {
                 if(isset($_GET["edit_orders"])){
                     include("edit_orders.php");
                 }
+                if(isset($_GET["list_payments"])){
+                    include("list_payments.php");
+                }
 
+                
                 
             ?>
             </div>
