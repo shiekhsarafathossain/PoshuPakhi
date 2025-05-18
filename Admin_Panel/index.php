@@ -204,18 +204,18 @@ table, th, td {
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='../users_area/profile.php'>Welcome ".$_SESSION['username']."</a>
+        <a class='nav-link' href='./index.php'>Welcome ".$_SESSION['username']."</a>
       </li>";
         }
      
         if(!isset($_SESSION['username'])){
           echo "<li class='nav-item'>
-        <a class='nav-link' href='../users_area/user_login.php'>Login</a>
+        <a class='nav-link' href='./admin_login.php'>Login</a>
       </li>";
         }
         else{
           echo "<li class='nav-item'>
-        <a class='nav-link' href='../users_area/logout.php'>Logout</a>
+        <a class='nav-link' href='./logout.php'>Logout</a>
       </li>";
         }
 
@@ -271,10 +271,10 @@ table, th, td {
                 <a href='./index.php?list_payments' class='nav-link'>View Payment List</a>                
             </li>
             <li class='nav-item category-item'>
-                <a href='#' class='nav-link'>View User List</a>                
+                <a href='./index.php?list_users' class='nav-link'>View User List</a>                
             </li>
             <li class='nav-item category-item'>
-                <a href='#' class='nav-link'>Register Admin/Moderator</a>                
+                <a href='./admin_registration.php' class='nav-link'>Register Admin/Moderator</a>                
             </li>
             <li class='nav-item category-item'>
                 <a href='#' class='nav-link'>Sales Report</a>                
@@ -326,6 +326,9 @@ table, th, td {
                 }
                 if(isset($_GET["list_payments"])){
                     include("list_payments.php");
+                }
+                if(isset($_GET["list_users"])){
+                    include("list_users.php");
                 }
 
                 
