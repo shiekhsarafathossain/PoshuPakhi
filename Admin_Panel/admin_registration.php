@@ -175,8 +175,14 @@ include("../functions/common_function.php");
 </head>
 <body style="overflow-x: hidden !important;">
 
+
+<!-- Title Part Start -->
+<?php include("../Includes/title_bar.php"); ?>
+<!-- Title Part End -->
+
+
 <div class="container-fluid m-3">
-    <h2 class="text-center">Admin Registration</h2>
+    <h2 class="text-center">Admin/Stuff Registration</h2>
     <div class="row d-flex align-items-center justify-content-center">
         <div class="col-lg-12 col-xl-6">
             <form action="" method="post" enctype="multipart/form-data">
@@ -212,6 +218,12 @@ include("../functions/common_function.php");
                     <input type="text" id="user_contact" class="form-control" placeholder="Enter your contact number" autocomplete="off" required name="user_contact">
                 </div>
 
+                <!-- admin -->
+                <div class="form-outline mb-4">
+                    <label for="admin_verify" class="form-label">Admin account?</label>
+                    <input type="text" id="user_contact" class="form-control" placeholder="Enter yes or no!" autocomplete="off" required name="admin_verify">
+                </div>
+
                 <!-- Submit Button -->
                 <div class="mt-4 pt-2">
                     <input type="submit" value="Register" class="button-addtocart-color py-3 px-3 border-0 w-100" name="user_register">
@@ -226,6 +238,12 @@ include("../functions/common_function.php");
     </div>
 </div>
 
+<!-- Footer Start -->
+<?php
+  include("../Includes/footer.php");
+?>
+<!-- Footer End -->
+
 </body>
 </html>
 
@@ -237,7 +255,7 @@ if (isset($_POST['user_register'])) {
     $confirm_user_password = $_POST['confirm_user_password'];
 
     $user_contact = $_POST['user_contact'];
- 
+    $admin_verify = $_POST['admin_verify'];
 
     // Check if passwords not match
     if ($user_password !== $confirm_user_password) {
@@ -260,8 +278,8 @@ if (isset($_POST['user_register'])) {
     }
     else{
     // Insert query
-    $insert_query = "INSERT INTO admin_table (username, email, password, contact) 
-    VALUES ('$user_username', '$user_email', '$hash_password', '$user_contact')";
+    $insert_query = "INSERT INTO admin_table (username, email, password, contact, admin) 
+    VALUES ('$user_username', '$user_email', '$hash_password', '$user_contact', '$admin_verify')";
 
     $sql_execute = mysqli_query($con, $insert_query);
 

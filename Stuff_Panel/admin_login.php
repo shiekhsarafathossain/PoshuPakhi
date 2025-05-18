@@ -20,8 +20,9 @@ include("../Includes/connect.php");
         Welcome Back,
       </h1>
       <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">
-        Admin Panel
+        Stuff Panel
       </h1>
+ 
       <div class="mt-10 w-full rounded-lg overflow-hidden shadow-lg">
         <!-- <img 
           src="https://source.unsplash.com/600x400/?technology,abstract,cyber"
@@ -83,7 +84,7 @@ if(isset($_POST['user_login'])){
     $user_username = $_POST['user_username'];
     $user_password = $_POST['user_password'];
 
-    $select_query = "SELECT * FROM admin_table WHERE username='$user_username' AND admin='yes'";
+    $select_query = "SELECT * FROM admin_table WHERE username='$user_username' AND admin='no'";
     $result = mysqli_query($con, $select_query);
     $row_count = mysqli_num_rows($result);
     $row_data = mysqli_fetch_assoc($result);

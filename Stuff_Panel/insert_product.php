@@ -1,7 +1,5 @@
 <?php
 include("../includes/connect.php");
-@session_start();
-
 if(isset($_POST['insert_products'])){
     $product_title = $_POST['product_title'];
     $product_description = $_POST['description'];
