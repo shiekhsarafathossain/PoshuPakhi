@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-        <h1 class="text-center">View Categories</h1>
-    <table class="table table-border m5-5">
+    <h1 class="text-center">View Categories</h1>
+    <table class="table table-border mt-5">
         <thead class="bg-info">
             <tr>
                 <th>Category Id</th>

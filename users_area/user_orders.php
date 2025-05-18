@@ -24,8 +24,8 @@
     <table class="table table-bordered mt-5">
         <thead class="bg-info">
             <tr>
-                <th>SL No</th>
-                <th>Amount Due</th>
+                <th>Order ID</th>
+                <th>Amount</th>
                 <th>Total Products</th>
                 <th>Invoice Number</th>
                 <th>Order Date</th>
@@ -51,11 +51,12 @@
                 $estimated_delivery = date('Y-m-d', strtotime($row_orders['estimated_delivery']));
                 $shipping_address = $row_orders['user_shipping_address'];
                 $order_status = $row_orders['order_status'];
-                $order_completed = ($order_status == 'Complete') ? 'Complete' : 'Incomplete';
+
+                $order_completed = ($order_status == 'Delivered') ? 'Complete' : 'Incomplete';
 
                 echo "
                 <tr>
-                    <td>$number</td>
+                    <td>$order_id</td>
                     <td>$amount_due</td>
                     <td>$total_products</td>
                     <td>$invoice_number</td>
