@@ -10,7 +10,7 @@
     <table class="table table-border mt-5 text-center">
         <thead class="bg-info">
             <tr>
-                <th>Order ID</th>
+                <!-- <th>Order ID</th> -->
                 <th>Invoice Number</th>
                 <th>Total Products</th>
                 <th>Due Amount</th>
@@ -38,7 +38,7 @@
                 $status=$row_data['order_status'];
                 echo "
                 <tr class='text-center'>
-                <td>$order_id</td>
+                
                 <td>$invoice_number</td>
                 <td>$total_products</td>
                 <td>$amount_due</td>

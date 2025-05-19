@@ -57,11 +57,13 @@
                 <td><?php echo $stock_quantity; ?></td>
                 <td>
                     <?php
-                    $get_count = "SELECT * FROM order_pending WHERE product_id='$product_id'";
-                    $result_count = mysqli_query($con, $get_count);
-                    $rows_count = mysqli_num_rows($result_count);
-                    echo $rows_count;
-                    ?>
+                $get_count = "SELECT SUM(quantity) AS total_quantity FROM order_pending WHERE product_id='$product_id'";
+                $result_count = mysqli_query($con, $get_count);
+                $rows_count = mysqli_fetch_array($result_count);
+                $qnt = $rows_count['total_quantity'] ?? 0; // Default to 0 if null
+    
+                echo $qnt;
+                ?>
                 </td>
                 <td><?php echo $status; ?></td>
                 <td><a href="./index.php?edit_products=<?php echo $product_id; ?>" class="text-dark"><i class="fa-solid fa-pen-to-square"></i></a></td>

@@ -277,7 +277,7 @@ table, th, td {
                 <a href='./admin_registration.php' class='nav-link'>Register Admin/Moderator</a>                
             </li>
             <li class='nav-item category-item'>
-                <a href='#' class='nav-link'>Sales Report</a>                
+                <a href='./index.php?sales' class='nav-link'>Sales Report</a>                
             </li>
             <li class='nav-item category-item'>
                 <a href='#' class='nav-link'>#</a>                
@@ -330,13 +330,43 @@ table, th, td {
                 if(isset($_GET["list_users"])){
                     include("list_users.php");
                 }
+                if(isset($_GET["sales"])){
+                    include("sales.php");
+                }
                 if(empty($_GET)){
-                  echo "
-                  <h2 class='text-center text-danger'>Notice</h2>
+                   $get_quantity = "SELECT * FROM products WHERE stock_quantity - sold_quantity < 5";
+    $result = mysqli_query($con, $get_quantity);
 
-                  
-            
-                  ";
+    if ($result && mysqli_num_rows($result) > 0) {
+        echo "
+        <h2 class='text-center text-danger'>Notice</h2>
+        <h3 class='text-center'>Low Stock Products</h3>
+        <table class='table table-border mt-3'>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Title</th>
+                        <th>Stock Quantity</th>
+                        <th>Sold Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>
+                    <td>{$row['product_id']}</td>
+                    <td>{$row['product_title']}</td>
+                    <td>{$row['stock_quantity']}</td>
+                    <td>{$row['sold_quantity']}</td>
+                  </tr>";
+        }
+
+        echo "</tbody></table>";
+    } else {
+        echo "
+        <h2 class='text-center text-danger'>Notice</h2>
+        <h3 class='text-center text-success'>No products with low stock.</h3>";
+    }
                 }
         
 

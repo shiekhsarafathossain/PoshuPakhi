@@ -44,6 +44,14 @@ $get_item_quantity = mysqli_fetch_array($run_cart);
 $quantity = $get_item_quantity['quantity'];
 $product_id = $get_item_quantity['product_id']; // capture product_id here for pending orders
 
+// quantity sold update
+
+$quantity_sold = "UPDATE products SET sold_quantity=sold_quantity+$quantity WHERE product_id=$product_id";
+$run_quantity = mysqli_query($con, $quantity_sold);
+
+// end
+
+
 if ($quantity == 0 || $quantity == 1) {
     $quantity = 1;
     $subtotal = $total_price;
