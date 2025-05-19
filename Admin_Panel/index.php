@@ -330,10 +330,20 @@ table, th, td {
                 if(isset($_GET["list_users"])){
                     include("list_users.php");
                 }
+                if(empty($_GET)){
+                  echo "
+                  <h2 class='text-center text-danger'>Notice</h2>
+
+                  
+            
+                  ";
+                }
+        
 
                 
                 
             ?>
+            
             </div>
         </div>
         <!-- Product End -->

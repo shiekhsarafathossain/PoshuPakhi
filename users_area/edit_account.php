@@ -73,7 +73,7 @@ if(isset($_GET['edit_account'])){
             <label id="file-label" class="text-success mb-4 fw-bold">Choose Picture</label>
             <input type="file" class="form-control w-50 m-auto" name="user_image" onchange="updateFileName(this)">
             
-            <!-- <img src="../assets/images/user_images/<?php echo $user_image ?>" alt="User Image" style="width:100px"> -->
+            <!-- <img src="../assets/images/user_images/<?php// echo $user_image ?>" alt="User Image" style="width:100px"> -->
         </div>
         <div class="form-outline mb-4">
             <input type="submit" value="Update" class="btn button-addtocart-color" name="user_update">
