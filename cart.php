@@ -196,7 +196,7 @@ body {
     <!-- Sidebar End -->
   </div>
 
-  <div class="col-md-9 m-auto mt-3">
+  <div class="col-md-9 mx-auto mt-3">
     <!-- Product Area -->
     <div class="row">
       <!-- Cart Section -->

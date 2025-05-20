@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1 class="text-center">View Products</h1>
-    <table class="table table-border m5-5">
+    <table class="table table-border mt-5">
         <thead class="bg-info">
             <tr>
                 <th>Product ID</th>

@@ -29,7 +29,7 @@ function getProducts(){
       $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
 
       // limit description to 100 characters
-      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+      $short_description = strlen($product_description) > 50 ? substr($product_description, 0, 50) . '...' : $product_description;
 
       echo "<div class='col-md-4 mb-3'>
             <div class='card h-100'>
@@ -89,7 +89,7 @@ function getAllProducts(){
       $product_price = $row['product_price'];
 
       $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
-      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+      $short_description = strlen($product_description) > 50 ? substr($product_description, 0, 50) . '...' : $product_description;
 
       echo "<div class='col-md-4 mb-3'>
               <div class='card h-100'>
@@ -119,7 +119,7 @@ function getProductsbByCategories(){
     if(isset($_GET['categories'])){
     $category_id = $_GET['categories'];
     // Fetching the products
-    $select_query = "SELECT * FROM products WHERE category_id = $category_id ORDER BY rand() LIMIT 0,9";
+    $select_query = "SELECT * FROM products WHERE category_id = $category_id ORDER BY rand()";
     $result_query = mysqli_query($con,$select_query);
 
     $numOfRows = mysqli_num_rows($result_query); // counting rows
@@ -143,7 +143,7 @@ function getProductsbByCategories(){
       $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
 
       // limit description to 100 characters
-      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+      $short_description = strlen($product_description) > 50 ? substr($product_description, 0, 50) . '...' : $product_description;
 
       echo "<div class='col-md-4 mb-3'>
             <div class='card h-100'>
@@ -218,7 +218,7 @@ function searchProducts(){
       $short_title = strlen($product_title) > 40 ? substr($product_title, 0, 40) . '...' : $product_title;
 
       // limit description to 100 characters
-      $short_description = strlen($product_description) > 140 ? substr($product_description, 0, 140) . '...' : $product_description;
+      $short_description = strlen($product_description) > 50 ? substr($product_description, 0, 50) . '...' : $product_description;
 
       echo "<div class='col-md-4 mb-3'>
             <div class='card h-100'>

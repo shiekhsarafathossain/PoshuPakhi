@@ -34,6 +34,7 @@
     "wdth" 100;
 }
 
+
 /* font end */
 /* 
 body {
@@ -334,10 +335,10 @@ table, th, td {
                     include("sales.php");
                 }
                 if(empty($_GET)){
-                   $get_quantity = "SELECT * FROM products WHERE stock_quantity - sold_quantity < 5";
-    $result = mysqli_query($con, $get_quantity);
+                  $get_quantity = "SELECT * FROM products WHERE (stock_quantity - sold_quantity) < 5";
+                  $result = mysqli_query($con, $get_quantity);
 
-    if ($result && mysqli_num_rows($result) > 0) {
+        if ($result && mysqli_num_rows($result) > 0) {
         echo "
         <h2 class='text-center text-danger'>Notice</h2>
         <h3 class='text-center'>Low Stock Products</h3>

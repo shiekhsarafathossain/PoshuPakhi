@@ -215,7 +215,7 @@
 
   <!-- SideBar End -->
   </div>
-  <div class="col-md-9 m-auto">
+  <div class="col-md-9 mx-auto">
     <!-- Product Start -->
     <div class="row">
     

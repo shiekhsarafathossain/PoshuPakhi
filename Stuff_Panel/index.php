@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Staff Panel</title>
     <!-- Bootstrap CSS Link Start -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap CSS Link End -->
@@ -315,6 +315,47 @@ table, th, td {
                 if(isset($_GET["list_users"])){
                     include("list_users.php");
                 }
+                if(isset($_GET["list_payments"])){
+                    include("list_payments.php");
+                }
+                if(empty($_GET)){
+                  $get_quantity = "SELECT * FROM products WHERE (stock_quantity - sold_quantity) < 5";
+                  $result = mysqli_query($con, $get_quantity);
+
+        if ($result && mysqli_num_rows($result) > 0) {
+        echo "
+        <h2 class='text-center text-danger'>Notice</h2>
+        <h3 class='text-center'>Low Stock Products</h3>
+        <table class='table table-border mt-3'>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Title</th>
+                        <th>Stock Quantity</th>
+                        <th>Sold Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>
+                    <td>{$row['product_id']}</td>
+                    <td>{$row['product_title']}</td>
+                    <td>{$row['stock_quantity']}</td>
+                    <td>{$row['sold_quantity']}</td>
+                  </tr>";
+        }
+
+        echo "</tbody></table>";
+    } else {
+        echo "
+        <h2 class='text-center text-danger'>Notice</h2>
+        <h3 class='text-center text-success'>No products with low stock.</h3>";
+    }
+                }
+        
+
+                
 
                 
                 

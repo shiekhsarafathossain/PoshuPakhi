@@ -214,7 +214,7 @@ body {
   <!-- SideBar End -->
   </div>
 
-  <div class="col-md-9 pt-3 m-auto">
+  <div class="col-md-9 pt-3 mx-auto">
   <!-- Sorting dropdown start -->
   <div class="d-flex justify-content-end mb-3">
     <form method="GET" id="sortForm">
